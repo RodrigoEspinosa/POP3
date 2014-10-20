@@ -9,7 +9,7 @@ namespace POP3
 		private IState state;
 		private String name;
 
-		public IState StateId {
+		public Guid StateId {
 			get { return this.state.Id; }
 			set { 
 				this.state = Model<State>.GetBy ("Id", value);
