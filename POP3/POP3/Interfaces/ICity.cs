@@ -14,7 +14,7 @@ namespace POP3
 		/// Gets or sets the city name.
 		/// </summary>
 		/// <value>The city name.</value>
-		String name { get; set; }
+		String Name { get; set; }
 	}
 }
 

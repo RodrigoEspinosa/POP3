@@ -26,6 +26,7 @@ namespace POP3
 
 		public Guid Id { 
 			get { return this.id; }
+			set { this.id = value; }
 		}
 
 		public Model ()
@@ -58,8 +59,7 @@ namespace POP3
 		/// <summary>
 		/// Deserialize the specified data.
 		/// 
-		/// NOTE: Since Xamarin does not support dynamic typing. The return
-		/// can not be automaticly casted.
+		/// NOTE: Since Xamarin does not support dynamic typing.
 		/// </summary>
 		/// <param name="data">Data.</param>
 		public static T Deserialize (String data)

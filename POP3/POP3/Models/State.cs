@@ -11,11 +11,7 @@ namespace POP3
 		public Guid CountryId {
 			get { return country.Id; }
 			set {
-				foreach (Country c in Model<Country>.getInstances()) {
-					if (c.Id.Equals (value)) {
-						this.country = c;
-					}
-				}
+				this.country = Model<Country>.GetBy ("Id", value);
 			}
 		}
 
@@ -42,4 +38,3 @@ namespace POP3
 		}
 	}
 }
-

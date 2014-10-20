@@ -48,6 +48,7 @@
     <Compile Include="Models\Model.cs" />
     <Compile Include="Models\State.cs" />
     <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\City.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
