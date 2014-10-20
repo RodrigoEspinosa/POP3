@@ -1,0 +1,6 @@
+/Users/rec/Documents/Projects/ucu/Obligatorio/POP3/POP3/obj/x86/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/Users/rec/Documents/Projects/ucu/Obligatorio/POP3/POP3/bin/Debug/POP3.exe.mdb
+/Users/rec/Documents/Projects/ucu/Obligatorio/POP3/POP3/bin/Debug/POP3.exe
+/Users/rec/Documents/Projects/ucu/Obligatorio/POP3/POP3/obj/x86/Debug/POP3.exe
+/Users/rec/Documents/Projects/ucu/Obligatorio/POP3/POP3/obj/x86/Debug/POP3.exe.mdb
+/Users/rec/Documents/Projects/ucu/Obligatorio/POP3/POP3/bin/Debug/Newtonsoft.Json.dll

@@ -1,0 +1,22 @@
+[
+  {
+    "CountryId": "3af84861-3829-4b22-95a8-28b29909a66d",
+    "Name": "S1",
+    "Id": "02ae7426-ab63-4b2c-9aca-5a934ab8394f"
+  },
+  {
+    "CountryId": "3af84861-3829-4b22-95a8-28b29909a66d",
+    "Name": "S2",
+    "Id": "a5f54a3a-178a-4fe0-925b-a869af17441a"
+  },
+  {
+    "CountryId": "3af84861-3829-4b22-95a8-28b29909a66d",
+    "Name": "S3",
+    "Id": "23a2bfcf-b0ff-4979-aa10-59142ed558b2"
+  },
+  {
+    "CountryId": "cb2aeaef-1d26-43bb-9fc3-d02fb29b8910",
+    "Name": "S4",
+    "Id": "5af6ff8c-645d-4a5f-ba93-325e4f8c371e"
+  }
+]
