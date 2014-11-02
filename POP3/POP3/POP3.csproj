@@ -50,6 +50,7 @@
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Neighborhood.cs" />
+    <Compile Include="Models\Address.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
