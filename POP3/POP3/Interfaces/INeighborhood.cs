@@ -14,7 +14,7 @@ namespace POP3
 		/// Gets or sets the neighborhood name.
 		/// </summary>
 		/// <value>The neighborhood name.</value>
-		String name { get; set; }
+		String Name { get; set; }
 	}
 }
 
