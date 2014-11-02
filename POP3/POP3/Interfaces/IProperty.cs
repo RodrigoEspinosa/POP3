@@ -2,8 +2,14 @@
 
 namespace POP3
 {
-	public interface IProperty : IModel, IAddress
+	public interface IProperty : IModel
 	{
+		/// <summary>
+		/// Gets or sets the property address.
+		/// </summary>
+		/// <value>Property address.</value>
+		IAddress Address { get; set; }
+
 		/// <summary>
 		/// Gets or sets the number of bedrooms.
 		/// </summary>

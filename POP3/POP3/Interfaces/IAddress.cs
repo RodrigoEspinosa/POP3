@@ -2,7 +2,7 @@
 
 namespace POP3
 {
-	public interface IAddress
+	public interface IAddress : IModel
 	{
 		/// <summary>
 		/// Gets or sets the neighborhood.

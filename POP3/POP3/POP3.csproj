@@ -51,6 +51,7 @@
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Neighborhood.cs" />
     <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\Property.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
