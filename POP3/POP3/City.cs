@@ -27,10 +27,9 @@ namespace POP3
 			set { name = value; }
 		}
 
-		public City (String name, State state)
+		public City (String name)
 		{
 			this.name = name;
-            this.State = state;
 		}
 	}
 }

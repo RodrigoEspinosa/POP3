@@ -1,11 +1,10 @@
 ﻿using System;
 
 using Newtonsoft.Json;
-using System.ComponentModel;
 
 namespace POP3
 {
-    public class Address : Model<Address>, IAddress
+	public class Address : Model<Address>, IAddress
 	{
 		private String addressLine1;
 		private String addressLine2;
@@ -46,7 +45,6 @@ namespace POP3
 			this.AddressLine2 = addressLine2;
 			this.Number = number;
 		}
-
-    }
+	}
 }
 

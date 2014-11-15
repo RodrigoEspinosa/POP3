@@ -39,6 +39,7 @@ namespace POP3
 		/// </summary>
 		/// <returns>The property address.</returns>
 		String FullAddress ();
+        
 	}
 }
 

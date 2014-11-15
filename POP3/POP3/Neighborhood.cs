@@ -27,15 +27,9 @@ namespace POP3
 			set { name = value; }
 		}
 
-		public Neighborhood (String name, City city)
+		public Neighborhood (String name)
 		{
 			this.name = name;
-            this.City = city;
 		}
-
-        public override string ToString()
-        {
-            return this.name;
-        }
 	}
 }
