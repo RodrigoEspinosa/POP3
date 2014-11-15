@@ -5,7 +5,7 @@ using System.IO;
 
 namespace POP3
 {
-    class FileExplorer
+    public abstract class FileExplorer
     {
         /// <summary>
         /// Open a file exlporer dialog and display the

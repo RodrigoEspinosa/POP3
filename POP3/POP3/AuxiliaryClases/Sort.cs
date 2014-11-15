@@ -7,9 +7,14 @@ using System.Linq;
 
 namespace POP3
 {
-    class Sort
+    public abstract class Sort
     {
-        public static IOrderedEnumerable<House> SortbyNeighborhood(List<House> lista)
+        /// <summary>
+        /// Sort houses by Neighborhood.
+        /// </summary>
+        /// <param name="lista"></param>
+        /// <returns>List<House></House></returns>
+        public static IOrderedEnumerable<House> SortbyNeighborhood(IList<House> lista)
         {
             var sortedByNeighborhood =
             from nei in lista

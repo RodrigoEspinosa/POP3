@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace POP3
 {
-    interface ICustomForm
+    public interface ICustomForm
     {
         void Refresh();
     }

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace POP3.Models
 {
-    class Client: Person
+    public class Client: Person
     {
         protected bool sellsHisProperty;
         protected bool rentsHisProperty;

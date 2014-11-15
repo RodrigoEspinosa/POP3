@@ -13,6 +13,10 @@ namespace POP3
 {
     public abstract class Verify
     {
+        /// <summary>
+        /// Verify whether a string is numeric or not.
+        /// </summary>
+        /// <param name="textBox"></param>
         public static void Int(CustomTextBox textBox)
         {
             try
@@ -37,6 +41,11 @@ namespace POP3
             }
         }
 
+
+        /// <summary>
+        /// Verify whether a string is has numbers or not.
+        /// </summary>
+        /// <param name="textBox"></param>
         public static void String(CustomTextBox textBox)
         {
             List<String> listedString = new List<String>(textBox.Text.ToString().Split());
@@ -61,6 +70,12 @@ namespace POP3
         }
 
 
+        /// <summary>
+        /// Verify whether a string is a valid
+        /// email address or not.
+        /// </summary>
+        /// <param name="textBox"></param>
+        /// <returns>bool</returns>
         public static bool Email(CustomTextBox textBox)
         {
             if (textBox.Text != "")

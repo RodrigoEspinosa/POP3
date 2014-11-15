@@ -372,9 +372,9 @@ namespace POP3
             String city;
             try
             {
-                country = LocationAux.GetName(locCountryComboBox, locCountryTextBox);
-                state = LocationAux.GetName(locStateComboBox, locStateTextBox);
-                city = LocationAux.GetName(locCityComboBox, locCityTextBox);
+                country = LocationAux.GetLocationName(locCountryComboBox, locCountryTextBox);
+                state = LocationAux.GetLocationName(locStateComboBox, locStateTextBox);
+                city = LocationAux.GetLocationName(locCityComboBox, locCityTextBox);
                 
                 if (!LocationAux.TextBoxIsEmpty(locNeighborhoodTextBox))
                 {
