@@ -69,6 +69,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuxiliaryClases\CountryArray.cs" />
+    <Compile Include="AuxiliaryClases\DataMiddleware.cs" />
     <Compile Include="AuxiliaryClases\LocationAux.cs" />
     <Compile Include="AuxiliaryClases\FileExplorer.cs" />
     <Compile Include="Interfaces\IAddress.cs" />
