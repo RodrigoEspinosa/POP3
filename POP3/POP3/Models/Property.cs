@@ -10,6 +10,8 @@ namespace POP3
         protected int bathrooms;
         protected int year;
         protected int builtMeters;
+        protected bool forRent;
+        protected bool forSale;
         protected IAddress address;
 
         public int Bedrooms
@@ -34,6 +36,18 @@ namespace POP3
         {
             get { return builtMeters; }
             set { builtMeters = value; }
+        }
+
+        public bool ForRent
+        {
+            get { return this.forRent; }
+            set { this.forRent = value; }
+        }
+
+        public bool ForSale
+        {
+            get { return this.forSale; }
+            set { this.forSale = value; }
         }
 
         public Guid AddressId
@@ -71,12 +85,14 @@ namespace POP3
             return fullAddress;
         }
 
-        public Property(int bedrooms, int bathrooms, int years, int builtMeters, String adress1, String adress2, String number, INeighborhood neighborhood)
+        public Property(int bedrooms, int bathrooms, int years, int builtMeters, String adress1, String adress2, String number, bool forRent, bool forSale, INeighborhood neighborhood)
         {
             this.bedrooms = bedrooms;
             this.bathrooms = bathrooms;
             this.year = years;
             this.builtMeters = builtMeters;
+            this.ForRent = forRent;
+            this.ForSale = forSale; 
             this.address = new Address(adress1, adress2, number);
             this.address.Neighborhood = neighborhood;
 

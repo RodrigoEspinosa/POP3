@@ -13,19 +13,21 @@ namespace POP3
 {
     public partial class MainWindow : MetroForm
     {
-        List<House> houseList = new List<House>();
-        List<Apartament> apartamentList = new List<Apartament>();
-        List<Client> clientList = new List<Client>();
-        List<Neighborhood> neighborhoodList = new List<Neighborhood>();
         public MainWindow()
         {
+            // Default initialize.
             InitializeComponent();
 
-            //fills the combo boxes.
+            // Fill the combo boxes.
             FillComboBoxes();
             
-            //sets the default pictures.
+            // Sets the default pictures.
             SetDefaultPictures();
+
+            // Refresh the combo boxes.
+            RefreshComboBoxes();
+
+            //Sort.PopulateGrid(Model<Apartament>.getInstances());
         }
        
         /// <summary>
@@ -46,35 +48,7 @@ namespace POP3
         /// <param name="e"></param>
         private void selectImageButton_Click(object sender, EventArgs e)
         {
-            FileExplorer.Open(customPictureBox);
-        }
-
-        /// <summary>
-        /// Creates the Neigborhood in the Add - Location tab.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void createNeigborhoodButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        /// <summary>
-        /// Makes Visible the galleryGarageComboBox if the galleryGarageFilter is cheked.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void IsGarageFilter_Check(object sender, EventArgs e)
-        {
-
-            if (galleryGarageCheckBox.Checked)
-            {
-                galleryGarageComboBox.Visible = true;
-            }
-            else
-            {
-                galleryGarageComboBox.Visible = false;
-            }
+            FileExplorer.Open(propertyPictureBox);
         }
 
         /// <summary>
@@ -110,6 +84,24 @@ namespace POP3
             else
             {
                 galleryNeighborhoodComboBox.Visible = false;
+            }
+        }
+
+        /// <summary>
+        /// Makes Visible the galleryGarageComboBox if the galleryGarageFilter is cheked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void IsGarageFilter_Check(object sender, EventArgs e)
+        {
+
+            if (galleryGarageCheckBox.Checked)
+            {
+                galleryGarageComboBox.Visible = true;
+            }
+            else
+            {
+                galleryGarageComboBox.Visible = false;
             }
         }
 
@@ -152,21 +144,6 @@ namespace POP3
         }
 
         /// <summary>
-        /// When summoned fills the comboBoxes.
-        /// </summary>
-        private void galleryFilterGoButton_Click(object sender, EventArgs e)
-        {
-            bool filterByApartament = galleryApartamentCheckBox.Checked;
-            bool filterByHouse = galleryHouseCheckBox.Checked;
-            bool filterByForSale = galleryForSaleCheckBox.Checked;
-            bool filterByForRent = galleryForRentCheckBox.Checked;
-            bool filterByGarage = galleryGarageCheckBox.Checked;
-            bool filteredByDormitory = galleryDormitoryCheckBox.Checked;
-            bool filteredByCountry = galleryCountryCheckBox.Checked;
-            bool filteredByNeighborhood = galleryNeighborhoodCheckBox.Checked;
-        }
-
-        /// <summary>
         /// Show / Hides country ComboBox/Text Box in the
         /// location tab depending on the country toogle value.
         /// </summary>
@@ -174,19 +151,7 @@ namespace POP3
         /// <param name="e"></param>
         private void locCountryToogle_Scroll(object sender, ScrollEventArgs e)
         {
-            switch (countryToogle.Value)
-            {
-                case 0:
-                    locCountryComboBox.Enabled = true;
-                    locCountryTextBox.Visible = false;
-                    locCountryTextBox.Text = "";
-                    break;
-                case 1:
-                    locCountryComboBox.Enabled = false;
-                    locCountryTextBox.Visible = true;
-                    locCountryComboBox.SelectedIndex = -1;
-                    break;
-            }
+            
         }
 
         /// <summary>
@@ -197,19 +162,7 @@ namespace POP3
         /// <param name="e"></param>
         private void locStateToogle_Scroll(object sender, ScrollEventArgs e)
         {
-            switch (stateToogle.Value)
-            {
-                case 0:
-                    locStateComboBox.Enabled = true;
-                    locStateTextBox.Visible = false;
-                    locStateTextBox.Text = "";
-                    break;
-                case 1:
-                    locStateComboBox.Enabled = false;
-                    locStateTextBox.Visible = true;
-                    locStateComboBox.SelectedIndex = -1;
-                    break;
-            }
+            LocationAux.ShowHideLocationControls(locStateComboBox, locStateTextBox, stateToogle);
         }
 
         /// <summary>
@@ -220,23 +173,11 @@ namespace POP3
         /// <param name="e"></param>
         private void locCityToogle_Scroll(object sender, ScrollEventArgs e)
         {
-            switch (cityToogle.Value)
-            {
-                case 0:
-                    locCityComboBox.Enabled = true;
-                    locCityTextBox.Visible = false;
-                    locCityTextBox.Text = "";
-                    break;
-                case 1:
-                    locCityComboBox.Enabled = false;
-                    locCityTextBox.Visible = true;
-                    locCityComboBox.SelectedIndex = -1;
-                    break;
-            }
+            LocationAux.ShowHideLocationControls(locCityComboBox, locCityTextBox, cityToogle);
         }
 
         /// <summary>
-        /// Shows/Hides certain garden/floors label 
+        /// Shows/Hides garden/floors label 
         /// depending on the selected value of the 
         /// propertyTypeComboBox.
         /// </summary>
@@ -282,68 +223,7 @@ namespace POP3
             }
         }
 
-        /// <summary>
-        /// Fills combo boxes.
-        /// </summary>
-        private void FillComboBoxes()
-        {
-            //Fills the propertyTypeComboBox.
-            propertyTypeComboBox.Items.Add("Apartament");
-            propertyTypeComboBox.Items.Add("House");
-
-            //Fills the builtYearComboBox
-            for (int i = 1900; i <= DateTime.Now.Year; i++)
-            {
-                builtYearComboBox.Items.Add(i);
-            }
-
-            //Fill the comboBoxes.
-            for (int i = 0; i < 10; i++)
-            {
-                bedroomComboBox.Items.Add(i);
-                bathroomComboBox.Items.Add(i);
-                garageComboBox.Items.Add(i);
-                galleryGarageComboBox.Items.Add(i);
-                galleryDormitoryComboBox.Items.Add(i);
-            }
-            //Add a "10+" option to some ComboBoxes.
-            bedroomComboBox.Items.Add("10+");
-            bathroomComboBox.Items.Add("10+");
-            garageComboBox.Items.Add("10+");
-            galleryDormitoryComboBox.Items.Add("10+");
-
-            //Add some prices to the Min-Max price ComboBox.
-            for (int i = 0; i <= 1000000; i += 50000)
-            {
-                galleryMinPriceComboBox.Items.Add(i);
-                galleryMaxPriceComboBox.Items.Add(i);
-            }
-
-            //Creates a list of conditions.
-            List<String> listOfConditions = new List<String>(new String[] {"Destroyed",
-                                                                            "Bad",
-                                                                            "Not that bad",
-                                                                            "Normal",
-                                                                            "Good",
-                                                                            "Very Good",
-                                                                            "Excellent"});
-            //Fill ComboBox with list of conditions.
-            foreach (String condition in listOfConditions)
-            {
-                conditionComboBox.Items.Add(condition);
-            }
-
-            //Fill modificationComboBox with the modificable fields.
-            modificationsComboBox.Items.Add("House");
-            modificationsComboBox.Items.Add("Apartament");
-            modificationsComboBox.Items.Add("Client");
-            modificationsComboBox.Items.Add("Location");
-
-            //Fill location Combo Boxes
-            locCountryComboBox.Items.Add("Uruguay");
-            locStateComboBox.Items.Add("Montevideo");
-            locCityComboBox.Items.Add("Montevideo");
-        }
+        // The functions start here.
 
         /// <summary>
         /// Set the default pictures to the picture boxes.
@@ -351,17 +231,23 @@ namespace POP3
         private void SetDefaultPictures()
         {
             //Set the default picture to an initial image.
-            customPictureBox.Image = customPictureBox.InitialImage;
+            propertyPictureBox.Image = propertyPictureBox.InitialImage;
             clientPictureBox.Image = clientPictureBox.InitialImage;
             galleryCustomPictureBox.Image = galleryCustomPictureBox.InitialImage;
         }
 
+        /// <summary>
+        /// Open file explorer.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void selectClientAvatar_Click(object sender, EventArgs e)
         {
             FileExplorer.Open(clientPictureBox);
         }
+
         /// <summary>
-        /// 
+        /// Creates a location.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -378,12 +264,22 @@ namespace POP3
                 
                 if (!LocationAux.TextBoxIsEmpty(locNeighborhoodTextBox))
                 {
-                    neighborhoodList.Add(new Neighborhood(locNeighborhoodTextBox.Text,
+                    new Neighborhood(locNeighborhoodTextBox.Text,
                                     new City(city,
                                     new State(state,
                                     new Country(country)
-                                    ))));
+                                    )));
                     MessageBox.Show("Location successfuly created!");
+                    
+                    Neighborhood.Save();
+                    City.Save();
+                    State.Save();
+                    Country.Save();
+                    
+                    countryToogle.Value = 0;
+                    stateToogle.Value = 0;
+                    cityToogle.Value = 0;
+                    RefreshComboBoxes();
                 }
                 else
                 {
@@ -396,15 +292,6 @@ namespace POP3
                 MessageBox.Show("Please check input fields...");
                 return;
             }
-            foreach (Neighborhood nei in neighborhoodList)
-            {
-                neighborhoodComboBox.Items.Add(nei);
-            }
-            foreach (Client client in clientList)
-            {
-                ownerComboBox.Items.Add(client);
-            }
-            
         }
 
         /// <summary>
@@ -420,7 +307,7 @@ namespace POP3
                 clientPhoneTextBox.Text != "" &&
                 Verify.Email(clientEmailTextBox))
             {
-                clientList.Add(new Client(clientNameTextBox.Text,
+                new Client(clientNameTextBox.Text,
                                           clientEmailTextBox.Text,
                                           clientPhoneTextBox.Text,
                                           clientIdTextBox.Text,
@@ -428,9 +315,21 @@ namespace POP3
                                           clientRentHisPropertyCheck.Checked,
                                           clientRentPropertyCheck.Checked,
                                           clientBuyPropertyCheck.Checked,
-                                          clientPictureBox.Image));
+                                          clientPictureBox.Image);
 
                 MessageBox.Show("Client successfuly created! ");
+                //Client.Save();
+                RefreshComboBoxes();
+                clientNameTextBox.Refresh();
+                clientIdTextBox.Refresh();
+                clientPhoneTextBox.Refresh();
+                clientEmailTextBox.Refresh();
+                clientPictureBox.Refresh();
+                clientBuyPropertyCheck.Checked = false;
+                clientRentPropertyCheck.Checked = false;
+                clientSellHisPropertyCheck.Checked = false;
+                clientRentHisPropertyCheck.Checked = false;
+                
             }
             else
             {
@@ -438,94 +337,178 @@ namespace POP3
             }
         }
 
+        /// <summary>
+        /// Controls a posible Format Exception.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void modHouseDataGrid_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             MessageBox.Show("The input isn't in the right format...");
         }
 
+        /// <summary>
+        /// Verify whether the text
+        /// is numeric or not.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void floorsTextBox_TextChanged(object sender, EventArgs e)
         {
             Verify.Int(floorsTextBox);
         }
 
+        /// <summary>
+        /// Verify whether the text
+        /// is numeric or not.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void clientNameTextBox_TextChanged(object sender, EventArgs e)
         {
             Verify.String(clientNameTextBox);
         }
 
+        /// <summary>
+        /// Verify whether the text
+        /// is numeric or not.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void clientIdTextBox_TextChanged(object sender, EventArgs e)
         {
             Verify.Int(clientIdTextBox);
         }
 
+        /// <summary>
+        /// Verify whether the text
+        /// is numeric or not.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void clientPhoneTextBox_TextChanged(object sender, EventArgs e)
         {
             Verify.Int(clientPhoneTextBox);
         }
 
+        /// <summary>
+        /// Verify whether the text
+        /// is numeric or not.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void clientNameTextBox_KeyUp(object sender, KeyEventArgs e)
         {
             Verify.String(clientNameTextBox);
         }
 
+        /// <summary>
+        /// Verify whether the text
+        /// is numeric or not.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void locCountryTextBox_TextChanged(object sender, EventArgs e)
         {
             Verify.String(locCountryTextBox);
         }
 
+        /// <summary>
+        /// Verify whether the text
+        /// is numeric or not.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void locStateTextBox_TextChanged(object sender, EventArgs e)
         {
             Verify.String(locStateTextBox);
         }
 
+        /// <summary>
+        /// Verify whether the text
+        /// is numeric or not.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void locCityTextBox_TextChanged(object sender, EventArgs e)
         {
             Verify.String(locCityTextBox);
         }
 
+        /// <summary>
+        /// Verify whether the text
+        /// is numeric or not.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void locNeighborhoodTextBox_TextChanged(object sender, EventArgs e)
         {
             Verify.String(locNeighborhoodTextBox);
         }
 
+        /// <summary>
+        /// Verify whether the text
+        /// is numeric or not.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void squareMeterTextBox_TextChanged(object sender, EventArgs e)
         {
             Verify.Int(squareMeterTextBox);
         }
 
+        /// <summary>
+        /// Verify whether the text
+        /// is numeric or not.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void apartamentNumber_TextChanged(object sender, EventArgs e)
         {
             Verify.Int(apartamentNumber);
         }
 
+        /// <summary>
+        /// Verify whether the text
+        /// is numeric or not.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void doorNumberTextBox_TextChanged(object sender, EventArgs e)
         {
             Verify.Int(doorNumberTextBox);
         }
 
+        /// <summary>
+        /// Verify whether the text
+        /// is numeric or not.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void sideStreetTextBox_TextChanged(object sender, EventArgs e)
         {
             Verify.String(sideStreetTextBox);
         }
 
+        /// <summary>
+        /// Verify whether the text
+        /// is numeric or not.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mainStreetTextBox_TextChanged(object sender, EventArgs e)
         {
             Verify.String(mainStreetTextBox);
         }
 
-        private Neighborhood GetNeighborhoodByName(CustomComboBox comboBox, List<Neighborhood> list)
-        {
-            Neighborhood nei = null;
-            foreach (Neighborhood nei1 in list)
-            {
-                if (nei1.Name == comboBox.SelectedItem.ToString())
-                {
-                    nei = nei1;
-                }
-            }
-            return nei;
-        }
 
+
+        /// <summary>
+        /// Creates a Apartament or a House
+        /// depending on the case.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void createPropertyFinishButton_Click(object sender, EventArgs e)
         {
             bool dataFilled = (propertyTypeComboBox.SelectedIndex != -1 &&
@@ -539,80 +522,195 @@ namespace POP3
                              bathroomComboBox.SelectedIndex != -1 &&
                              garageComboBox.SelectedIndex != -1 &&
                              conditionComboBox.SelectedIndex != -1 &&
-                             ownerComboBox.SelectedIndex != -1); 
-            
+                             ownerComboBox.SelectedIndex != -1);
 
 
-            if (propertyTypeComboBox.SelectedItem.ToString() == "Apartament")
+            try
             {
-                bool apartamentDataFilled = false;
-                apartamentDataFilled = (dataFilled &&
-                                   floorsTextBox.Text != "");
-                if (apartamentDataFilled)
+                if (propertyTypeComboBox.SelectedItem.ToString() == "Apartament")
                 {
-                    new Apartament(Int32.Parse(bedroomComboBox.SelectedItem.ToString()),
-                                           Int32.Parse(bathroomComboBox.SelectedItem.ToString()),
-                                           Int32.Parse(builtYearComboBox.SelectedItem.ToString()),
-                                           Int32.Parse(squareMeterTextBox.Text),
-                                           mainStreetTextBox.Text,
-                                           sideStreetTextBox.Text,
-                                           doorNumberTextBox.Text,
-                                           GetNeighborhoodByName(neighborhoodComboBox, neighborhoodList),
-                                           Int32.Parse(floorsTextBox.Text),
-                                           Int32.Parse(apartamentNumber.Text));
+                    bool apartamentDataFilled = false;
+                    apartamentDataFilled = (dataFilled &&
+                                       floorsTextBox.Text != "");
+                    if (apartamentDataFilled)
+                    {
+                        new Apartament(Int32.Parse(bedroomComboBox.SelectedItem.ToString()),
+                                               Int32.Parse(bathroomComboBox.SelectedItem.ToString()),
+                                               Int32.Parse(builtYearComboBox.SelectedItem.ToString()),
+                                               Int32.Parse(squareMeterTextBox.Text),
+                                               mainStreetTextBox.Text,
+                                               sideStreetTextBox.Text,
+                                               doorNumberTextBox.Text,
+                                               forRentCheckBox.Checked,
+                                               forSaleCheckBox.Checked,
+                                               Sort.GetNeighborhoodByName(neighborhoodComboBox, Model<Neighborhood>.getInstances()),
+                                               Int32.Parse(floorsTextBox.Text),
+                                               Int32.Parse(apartamentNumber.Text));
 
+                    }
+                    MessageBox.Show("Apartament succesifully created!");
+                    Apartament.Save();
                 }
-                MessageBox.Show("Apartament succesifully created!");
-                Apartament.Save();
+                if (propertyTypeComboBox.SelectedItem.ToString() == "House")
+                {
+                    bool houseDataFilled = false;
+                    houseDataFilled = (dataFilled &&
+                                       gardenCheckBox.Checked);
+                    if (houseDataFilled)
+                    {
+                        new House(Int32.Parse(bedroomComboBox.SelectedItem.ToString()),
+                                               Int32.Parse(bathroomComboBox.SelectedItem.ToString()),
+                                               Int32.Parse(builtYearComboBox.SelectedItem.ToString()),
+                                               Int32.Parse(squareMeterTextBox.Text),
+                                               mainStreetTextBox.Text,
+                                               sideStreetTextBox.Text,
+                                               doorNumberTextBox.Text,
+                                               forRentCheckBox.Checked,
+                                               forSaleCheckBox.Checked,
+                                               Sort.GetNeighborhoodByName(neighborhoodComboBox, Model<Neighborhood>.getInstances()),
+                                               galleryGarageCheckBox.Checked);
+                    }
+                    MessageBox.Show("House succesifully created!");
+                    House.Save();
+                }
+                mainStreetTextBox.Refresh();
+                sideStreetTextBox.Refresh();
+                doorNumberTextBox.Refresh();
+                apartamentNumber.Refresh();
+                neighborhoodComboBox.Refresh();
+                builtYearComboBox.Refresh();
+                squareMeterTextBox.Refresh();
+                bedroomComboBox.Refresh();
+                bathroomComboBox.Refresh();
+                garageComboBox.Refresh();
+                conditionComboBox.Refresh();
+                ownerComboBox.Refresh();
+                floorsTextBox.Refresh();
+                forSaleCheckBox.Checked = false;
+                forRentCheckBox.Checked = false;
+                gardenCheckBox.Checked  = false;
             }
-            if (propertyTypeComboBox.SelectedItem.ToString() == "House")
+            catch (NullReferenceException)
             {
-                bool houseDataFilled = false;
-                houseDataFilled = (dataFilled &&
-                                   gardenCheckBox.Checked);
-                if(houseDataFilled)
-                {
-                    new House(Int32.Parse(bedroomComboBox.SelectedItem.ToString()),
-                                           Int32.Parse(bathroomComboBox.SelectedItem.ToString()),
-                                           Int32.Parse(builtYearComboBox.SelectedItem.ToString()),
-                                           Int32.Parse(squareMeterTextBox.Text),
-                                           mainStreetTextBox.Text,
-                                           sideStreetTextBox.Text,
-                                           doorNumberTextBox.Text,
-                                           GetNeighborhoodByName(neighborhoodComboBox,neighborhoodList),
-                                           galleryGarageCheckBox.Checked);
-                }
-                MessageBox.Show("House succesifully created!");
-                House.Save();
+                MessageBox.Show("Please check input fields...");
+                return;        
             }
         }
 
+
+
+        private void countryToogle_Scroll(object sender, ScrollEventArgs e)
+        {
+            LocationAux.ShowHideLocationControls(locCountryComboBox, locCountryTextBox, countryToogle);
+        }
+
+        /// <summary>
+        /// Refresh the combo boxes 
+        /// with the new data.
+        /// </summary>
         private void RefreshComboBoxes()
         {
-            //Neighborhood List.
-            IList<Neighborhood> neiList = Model<Neighborhood>.getInstances();
-            
-            //Country List.
-            IList<Country> countryList = Model<Country>.getInstances();
-            
-            //State List.
-            IList<State> stateList = Model<State>.getInstances();
-            
-            //City List.
-            IList<City> cityList = Model<City>.getInstances(); 
+            // Fill country combo boxes.
+            foreach (Country country in Model<Country>.getInstances())
+            {
+                locCountryComboBox.Items.Add(country.Name);
+            }
 
-            //Fill neighborhood combo boxes.
-            neighborhoodComboBox.Items.Add(neiList);
-            clientNeighborhoodComboBox.Items.Add(neiList);
+            // Fill state combo boxes.
+            foreach (State state in Model<State>.getInstances())
+            {
+                locStateComboBox.Items.Add(state.Name);
+            }
 
-            //Fill country combo boxes.
-            locCountryComboBox.Items.Add(countryList);
+            foreach (City city in Model<City>.getInstances())
+            {
+                locCityComboBox.Items.Add(city.Name);
+            }
 
-            //Fill state combo boxes.
-            locStateComboBox.Items.Add(stateList);
-
-            //Fill city combo boxes.
-            locCityComboBox.Items.Add(cityList);
+            // Fill neighborhood combo boxes.
+            foreach (Neighborhood nei in Model<Neighborhood>.getInstances())
+            {
+                neighborhoodComboBox.Items.Add(nei.Name);
+                clientNeighborhoodComboBox.Items.Add(nei.Name);
+            }
         }
+
+        /// <summary>
+        /// Fills combo boxes.
+        /// </summary>
+        private void FillComboBoxes()
+        {
+            // Fill the propertyTypeComboBox.
+            propertyTypeComboBox.Items.Add("Apartament");
+            propertyTypeComboBox.Items.Add("House");
+
+            // Fills the builtYearComboBox
+            for (int i = 1900; i <= DateTime.Now.Year; i++)
+            {
+                builtYearComboBox.Items.Add(i);
+            }
+
+            // Fill the comboBoxes.
+            for (int i = 0; i < 10; i++)
+            {
+                bedroomComboBox.Items.Add(i);
+                bathroomComboBox.Items.Add(i);
+                garageComboBox.Items.Add(i);
+                galleryGarageComboBox.Items.Add(i);
+                galleryDormitoryComboBox.Items.Add(i);
+            }
+
+            // Add a "10+" option to some ComboBoxes.
+            bedroomComboBox.Items.Add("10+");
+            bathroomComboBox.Items.Add("10+");
+            garageComboBox.Items.Add("10+");
+            galleryDormitoryComboBox.Items.Add("10+");
+
+            // Add some prices to the Min-Max price ComboBox.
+            for (int i = 0; i <= 1000000; i += 50000)
+            {
+                galleryMinPriceComboBox.Items.Add(i);
+                galleryMaxPriceComboBox.Items.Add(i);
+            }
+
+            // Creates a list of conditions.
+            List<String> listOfConditions = new List<String>(new String[] {"Destroyed",
+                                                                            "Bad",
+                                                                            "Not that bad",
+                                                                            "Normal",
+                                                                            "Good",
+                                                                            "Very Good",
+                                                                            "Excellent"});
+            // Fill ComboBox with list of conditions.
+            foreach (String condition in listOfConditions)
+            {
+                conditionComboBox.Items.Add(condition);
+            }
+
+            // Fill modificationComboBox with the modificable fields.
+            modificationsComboBox.Items.Add("House");
+            modificationsComboBox.Items.Add("Apartament");
+            modificationsComboBox.Items.Add("Client");
+            modificationsComboBox.Items.Add("Location");
+        }
+
+        private void cityToogle_ValueChanged(object sender, EventArgs e)
+        {
+            LocationAux.ShowHideLocationControls(locCityComboBox, locCityTextBox, cityToogle);
+        }
+
+        private void countryToogle_ValueChanged(object sender, EventArgs e)
+        {
+            LocationAux.ShowHideLocationControls(locCountryComboBox, locCountryTextBox, countryToogle);
+        }
+
+        private void stateToogle_ValueChanged(object sender, EventArgs e)
+        {
+            LocationAux.ShowHideLocationControls(locStateComboBox, locStateTextBox, stateToogle);
+        }
+        
+
+
+       
     }
 }

@@ -1,9 +1,9 @@
 ﻿using POP3;
 using POP3.Models;
-using POP3;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using MetroFramework.Controls;
 
 namespace POP3
 {
@@ -23,5 +23,24 @@ namespace POP3
             return sortedByNeighborhood;
         }
 
+        /// <summary>
+        /// Returs the Neighborhood instance
+        /// corresponding to the given name.
+        /// </summary>
+        /// <param name="comboBox"></param>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static Neighborhood GetNeighborhoodByName(CustomComboBox comboBox, IList<Neighborhood> list)
+        {
+            Neighborhood nei = null;
+            foreach (Neighborhood nei1 in list)
+            {
+                if (nei1.Name == comboBox.SelectedItem.ToString())
+                {
+                    nei = nei1;
+                }
+            }
+            return nei;
+        }
     }
 }

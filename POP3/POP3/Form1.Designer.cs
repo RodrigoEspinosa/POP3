@@ -1,4 +1,5 @@
 ﻿using POP3;
+using System.Collections.Generic;
 
 namespace POP3
 {
@@ -109,8 +110,8 @@ namespace POP3
             this.metroLabel21 = new MetroFramework.Controls.MetroLabel();
             this.modificationsGrid = new MetroFramework.Controls.MetroGrid();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.metroTile2 = new MetroFramework.Controls.MetroTile();
-            this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.addClientMetroTile = new MetroFramework.Controls.MetroTile();
+            this.addPropertyMetroTile = new MetroFramework.Controls.MetroTile();
             this.welcomeLabel = new MetroFramework.Controls.MetroLabel();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.floorsTextBox = new POP3.CustomTextBox();
@@ -127,7 +128,7 @@ namespace POP3
             this.doorNumberTextBox = new POP3.CustomTextBox();
             this.sideStreetTextBox = new POP3.CustomTextBox();
             this.mainStreetTextBox = new POP3.CustomTextBox();
-            this.customPictureBox = new POP3.CustomPictureBox();
+            this.propertyPictureBox = new POP3.CustomPictureBox();
             this.locCityComboBox = new POP3.CustomComboBox();
             this.locStateComboBox = new POP3.CustomComboBox();
             this.locCountryComboBox = new POP3.CustomComboBox();
@@ -149,6 +150,13 @@ namespace POP3
             this.galleryDormitoryComboBox = new POP3.CustomComboBox();
             this.galleryGarageComboBox = new POP3.CustomComboBox();
             this.galleryCustomPictureBox = new POP3.CustomPictureBox();
+            this.Bedrooms = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroTabPage3.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
             this.metroTabControl2.SuspendLayout();
@@ -161,7 +169,7 @@ namespace POP3
             ((System.ComponentModel.ISupportInitialize)(this.modificationsGrid)).BeginInit();
             this.metroTabPage1.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.propertyPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.galleryCustomPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -192,7 +200,7 @@ namespace POP3
             this.metroTabPage3.Name = "metroTabPage3";
             this.metroTabPage3.Size = new System.Drawing.Size(1002, 645);
             this.metroTabPage3.TabIndex = 2;
-            this.metroTabPage3.Text = "Gallery";
+            this.metroTabPage3.Text = "Search";
             this.metroTabPage3.VerticalScrollbarBarColor = true;
             this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage3.VerticalScrollbarSize = 10;
@@ -205,7 +213,6 @@ namespace POP3
             this.galleryFilterGoButton.TabIndex = 18;
             this.galleryFilterGoButton.Text = "Filter";
             this.galleryFilterGoButton.UseSelectable = true;
-            this.galleryFilterGoButton.Click += new System.EventHandler(this.galleryFilterGoButton_Click);
             // 
             // galleryPriceRangeCheckBox
             // 
@@ -312,7 +319,7 @@ namespace POP3
             this.metroTabPage2.Name = "metroTabPage2";
             this.metroTabPage2.Size = new System.Drawing.Size(1002, 645);
             this.metroTabPage2.TabIndex = 1;
-            this.metroTabPage2.Text = "Add";
+            this.metroTabPage2.Text = "Create/Edit";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
@@ -326,7 +333,7 @@ namespace POP3
             this.metroTabControl2.Location = new System.Drawing.Point(-4, 8);
             this.metroTabControl2.Multiline = true;
             this.metroTabControl2.Name = "metroTabControl2";
-            this.metroTabControl2.SelectedIndex = 0;
+            this.metroTabControl2.SelectedIndex = 3;
             this.metroTabControl2.Size = new System.Drawing.Size(1010, 582);
             this.metroTabControl2.TabIndex = 2;
             this.metroTabControl2.UseSelectable = true;
@@ -358,7 +365,7 @@ namespace POP3
             this.metroTabPage6.Controls.Add(this.doorNumberTextBox);
             this.metroTabPage6.Controls.Add(this.sideStreetTextBox);
             this.metroTabPage6.Controls.Add(this.mainStreetTextBox);
-            this.metroTabPage6.Controls.Add(this.customPictureBox);
+            this.metroTabPage6.Controls.Add(this.propertyPictureBox);
             this.metroTabPage6.Controls.Add(this.metroLabel1);
             this.metroTabPage6.Controls.Add(this.ownerLabel);
             this.metroTabPage6.Controls.Add(this.bathroomsLabel);
@@ -649,6 +656,7 @@ namespace POP3
             this.cityToogle.TabIndex = 24;
             this.cityToogle.Text = "metroTrackBar3";
             this.cityToogle.Value = 0;
+            this.cityToogle.ValueChanged += new System.EventHandler(this.cityToogle_ValueChanged);
             this.cityToogle.Scroll += new System.Windows.Forms.ScrollEventHandler(this.locCityToogle_Scroll);
             // 
             // metroLabel11
@@ -679,6 +687,7 @@ namespace POP3
             this.stateToogle.TabIndex = 21;
             this.stateToogle.Text = "metroTrackBar2";
             this.stateToogle.Value = 0;
+            this.stateToogle.ValueChanged += new System.EventHandler(this.stateToogle_ValueChanged);
             this.stateToogle.Scroll += new System.Windows.Forms.ScrollEventHandler(this.locStateToogle_Scroll);
             // 
             // gardenLabel
@@ -712,7 +721,8 @@ namespace POP3
             this.countryToogle.TabIndex = 18;
             this.countryToogle.Text = "metroTrackBar1";
             this.countryToogle.Value = 0;
-            this.countryToogle.Scroll += new System.Windows.Forms.ScrollEventHandler(this.locCountryToogle_Scroll);
+            this.countryToogle.ValueChanged += new System.EventHandler(this.countryToogle_ValueChanged);
+            this.countryToogle.Scroll += new System.Windows.Forms.ScrollEventHandler(this.countryToogle_Scroll);
             // 
             // metroLabel8
             // 
@@ -936,6 +946,14 @@ namespace POP3
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.modApartamentDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.modApartamentDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.modApartamentDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Bedrooms,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -1068,8 +1086,8 @@ namespace POP3
             // 
             // metroTabPage1
             // 
-            this.metroTabPage1.Controls.Add(this.metroTile2);
-            this.metroTabPage1.Controls.Add(this.metroTile1);
+            this.metroTabPage1.Controls.Add(this.addClientMetroTile);
+            this.metroTabPage1.Controls.Add(this.addPropertyMetroTile);
             this.metroTabPage1.Controls.Add(this.welcomeLabel);
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
@@ -1083,25 +1101,25 @@ namespace POP3
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 10;
             // 
-            // metroTile2
+            // addClientMetroTile
             // 
-            this.metroTile2.ActiveControl = null;
-            this.metroTile2.Location = new System.Drawing.Point(560, 126);
-            this.metroTile2.Name = "metroTile2";
-            this.metroTile2.Size = new System.Drawing.Size(341, 273);
-            this.metroTile2.TabIndex = 4;
-            this.metroTile2.Text = "metroTile2";
-            this.metroTile2.UseSelectable = true;
+            this.addClientMetroTile.ActiveControl = null;
+            this.addClientMetroTile.Location = new System.Drawing.Point(560, 126);
+            this.addClientMetroTile.Name = "addClientMetroTile";
+            this.addClientMetroTile.Size = new System.Drawing.Size(341, 273);
+            this.addClientMetroTile.TabIndex = 4;
+            this.addClientMetroTile.Text = "Add client...";
+            this.addClientMetroTile.UseSelectable = true;
             // 
-            // metroTile1
+            // addPropertyMetroTile
             // 
-            this.metroTile1.ActiveControl = null;
-            this.metroTile1.Location = new System.Drawing.Point(104, 126);
-            this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(341, 273);
-            this.metroTile1.TabIndex = 3;
-            this.metroTile1.Text = "metroTile1";
-            this.metroTile1.UseSelectable = true;
+            this.addPropertyMetroTile.ActiveControl = null;
+            this.addPropertyMetroTile.Location = new System.Drawing.Point(104, 126);
+            this.addPropertyMetroTile.Name = "addPropertyMetroTile";
+            this.addPropertyMetroTile.Size = new System.Drawing.Size(341, 273);
+            this.addPropertyMetroTile.TabIndex = 3;
+            this.addPropertyMetroTile.Text = "Add property...";
+            this.addPropertyMetroTile.UseSelectable = true;
             // 
             // welcomeLabel
             // 
@@ -1329,15 +1347,15 @@ namespace POP3
             this.mainStreetTextBox.UseSelectable = true;
             this.mainStreetTextBox.TextChanged += new System.EventHandler(this.mainStreetTextBox_TextChanged);
             // 
-            // customPictureBox
+            // propertyPictureBox
             // 
-            this.customPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("customPictureBox.InitialImage")));
-            this.customPictureBox.Location = new System.Drawing.Point(572, 19);
-            this.customPictureBox.Name = "customPictureBox";
-            this.customPictureBox.Size = new System.Drawing.Size(372, 294);
-            this.customPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.customPictureBox.TabIndex = 25;
-            this.customPictureBox.TabStop = false;
+            this.propertyPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("propertyPictureBox.InitialImage")));
+            this.propertyPictureBox.Location = new System.Drawing.Point(572, 19);
+            this.propertyPictureBox.Name = "propertyPictureBox";
+            this.propertyPictureBox.Size = new System.Drawing.Size(372, 294);
+            this.propertyPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.propertyPictureBox.TabIndex = 25;
+            this.propertyPictureBox.TabStop = false;
             // 
             // locCityComboBox
             // 
@@ -1361,7 +1379,15 @@ namespace POP3
             // 
             // locCountryComboBox
             // 
+            this.locCountryComboBox.AutoCompleteCustomSource.AddRange(new string[] {
+            "Uruguay",
+            "Uganda",
+            "Universal",
+            "Unagui",
+            "Nicaragua"});
+            this.locCountryComboBox.DropDownHeight = 110;
             this.locCountryComboBox.FormattingEnabled = true;
+            this.locCountryComboBox.IntegralHeight = false;
             this.locCountryComboBox.ItemHeight = 23;
             this.locCountryComboBox.Location = new System.Drawing.Point(211, 117);
             this.locCountryComboBox.Name = "locCountryComboBox";
@@ -1608,6 +1634,44 @@ namespace POP3
             this.galleryCustomPictureBox.TabIndex = 2;
             this.galleryCustomPictureBox.TabStop = false;
             // 
+            // Bedrooms
+            // 
+            this.Bedrooms.HeaderText = "Bedrooms";
+            this.Bedrooms.Name = "Bedrooms";
+            this.Bedrooms.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Bedrooms.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Bedrooms.ToolTipText = "Number of bedrooms...";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Column2";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Column3";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Column4";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Column5";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Column6";
+            this.Column6.Name = "Column6";
+            // 
             // MainWindow
             // 
             this.AllowDrop = true;
@@ -1638,7 +1702,7 @@ namespace POP3
             this.metroTabPage1.ResumeLayout(false);
             this.metroTabPage1.PerformLayout();
             this.metroTabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.propertyPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.galleryCustomPictureBox)).EndInit();
             this.ResumeLayout(false);
@@ -1667,7 +1731,7 @@ namespace POP3
         private CustomTextBox doorNumberTextBox;
         private CustomTextBox sideStreetTextBox;
         private CustomTextBox mainStreetTextBox;
-        private CustomPictureBox customPictureBox;
+        private CustomPictureBox propertyPictureBox;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel ownerLabel;
         private MetroFramework.Controls.MetroLabel bathroomsLabel;
@@ -1744,8 +1808,8 @@ namespace POP3
         private CustomComboBox modificationsComboBox;
         private MetroFramework.Controls.MetroGrid modificationsGrid;
         private MetroFramework.Controls.MetroGrid modHouseDataGrid;
-        private MetroFramework.Controls.MetroTile metroTile2;
-        private MetroFramework.Controls.MetroTile metroTile1;
+        private MetroFramework.Controls.MetroTile addClientMetroTile;
+        private MetroFramework.Controls.MetroTile addPropertyMetroTile;
         private MetroFramework.Controls.MetroProgressBar metroProgressBar1;
         private MetroFramework.Controls.MetroButton createLocationButton;
         private MetroFramework.Controls.MetroGrid modApartamentDataGrid;
@@ -1756,6 +1820,13 @@ namespace POP3
         private MetroFramework.Controls.MetroCheckBox clientRentPropertyCheck;
         private MetroFramework.Controls.MetroCheckBox clientBuyPropertyCheck;
         private MetroFramework.Controls.MetroButton createPropertyFinishButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Bedrooms;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
 
 
     }

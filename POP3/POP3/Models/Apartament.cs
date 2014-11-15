@@ -22,8 +22,8 @@ namespace POP3.Models
             get { return this.floors; }
             set { this.floors = value; }
         }
-        public Apartament (int bedrooms, int bathrooms, int years, int builtMeters, String adress1, String adress2, String number, INeighborhood neighborhood, int floors, int aptNumber)
-		    :base(bedrooms,bathrooms,years,builtMeters,adress1,adress2,number,neighborhood)
+        public Apartament(int bedrooms, int bathrooms, int years, int builtMeters, String adress1, String adress2, String number, bool forRent, bool forSale, INeighborhood neighborhood, int floors, int aptNumber)
+		    :base(bedrooms, bathrooms, years, builtMeters, adress1, adress2, number, forRent, forSale, neighborhood)
         {
             this.Floors = floors;
             this.ApartamentNumber = aptNumber; 

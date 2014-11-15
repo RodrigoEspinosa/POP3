@@ -30,3 +30,16 @@ C:\Users\rec\Github\POP3\POP3\POP3\obj\Debug\POP3.csprojResolveAssemblyReference
 C:\Users\rec\Github\POP3\POP3\POP3\obj\Debug\POP3.MainWindow.resources
 C:\Users\rec\Github\POP3\POP3\POP3\obj\Debug\POP3.Properties.Resources.resources
 C:\Users\rec\Github\POP3\POP3\POP3\obj\Debug\POP3.csproj.GenerateResource.Cache
+C:\Users\Nicolas\Documents\GitHub\POP3\POP3\POP3\bin\Debug\POP3.exe.config
+C:\Users\Nicolas\Documents\GitHub\POP3\POP3\POP3\obj\Debug\POP3.exe
+C:\Users\Nicolas\Documents\GitHub\POP3\POP3\POP3\obj\Debug\POP3.pdb
+C:\Users\Nicolas\Documents\GitHub\POP3\POP3\POP3\bin\Debug\POP3.exe
+C:\Users\Nicolas\Documents\GitHub\POP3\POP3\POP3\bin\Debug\POP3.pdb
+C:\Users\Nicolas\Documents\GitHub\POP3\POP3\POP3\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Nicolas\Documents\GitHub\POP3\POP3\POP3\bin\Debug\MetroFramework.pdb
+C:\Users\Nicolas\Documents\GitHub\POP3\POP3\POP3\bin\Debug\MetroFramework.Design.pdb
+C:\Users\Nicolas\Documents\GitHub\POP3\POP3\POP3\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Nicolas\Documents\GitHub\POP3\POP3\POP3\obj\Debug\POP3.csprojResolveAssemblyReference.cache
+C:\Users\Nicolas\Documents\GitHub\POP3\POP3\POP3\obj\Debug\POP3.MainWindow.resources
+C:\Users\Nicolas\Documents\GitHub\POP3\POP3\POP3\obj\Debug\POP3.Properties.Resources.resources
+C:\Users\Nicolas\Documents\GitHub\POP3\POP3\POP3\obj\Debug\POP3.csproj.GenerateResource.Cache

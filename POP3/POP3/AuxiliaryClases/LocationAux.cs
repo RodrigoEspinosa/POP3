@@ -39,5 +39,29 @@ namespace POP3.AuxiliaryClases
             }
         }
 
+        public static void LocationRefreshFields(CustomComboBox comboBox, CustomTextBox textBox, MetroTrackBar toogle)
+        {
+            toogle.Value = 0;
+            comboBox.Refresh();
+            textBox.Refresh();
+        }
+
+        public static void ShowHideLocationControls(CustomComboBox comboBox, CustomTextBox textBox, MetroTrackBar toogle)
+        {
+            switch (toogle.Value)
+            {
+                case 0:
+                    comboBox.Enabled = true;
+                    textBox.Visible = false;
+                    textBox.Text = "";
+                    break;
+                case 1:
+                    comboBox.Enabled = false;
+                    textBox.Visible = true;
+                    comboBox.SelectedIndex = -1;
+                    break;
+            }
+        }
+
     }
 }

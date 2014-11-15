@@ -73,6 +73,8 @@
     <Compile Include="AuxiliaryClases\DataMiddleware.cs" />
     <Compile Include="AuxiliaryClases\LocationAux.cs" />
     <Compile Include="AuxiliaryClases\FileExplorer.cs" />
+    <Compile Include="AuxiliaryClases\PopulateApartamentGrid.cs" />
+    <Compile Include="AuxiliaryClases\PopulatePropertyGrid.cs" />
     <Compile Include="Interfaces\IAddress.cs" />
     <Compile Include="Interfaces\ICity.cs" />
     <Compile Include="Interfaces\ICountry.cs" />
