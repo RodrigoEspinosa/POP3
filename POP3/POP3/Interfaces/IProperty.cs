@@ -39,6 +39,16 @@ namespace POP3
 		/// </summary>
 		/// <returns>The property address.</returns>
 		String FullAddress ();
+
+        /// <summary>
+        /// Property rent status.
+        /// </summary>
+        bool ForRent { get; set; }
+
+        /// <summary>
+        /// Property sale status.
+        /// </summary>
+        bool ForSale { get; set; }
         
 	}
 }

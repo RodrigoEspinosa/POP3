@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-using POP3.Models;
 
 namespace POP3.AuxiliaryClases
 {
@@ -10,7 +9,7 @@ namespace POP3.AuxiliaryClases
     {
         public void PopulateGrid(MetroFramework.Controls.MetroGrid grid, IList<Apartament> list)
         {
-            PopulatePropertyGrid.PopulateGrid(grid, (IList<Property>)list);
+            PopulatePropertyGrid.PopulateGrid(grid, (IList<IProperty>)list);
             foreach (Apartament apt in list)
             {
                 for (int i = 0; i < 8; i++)

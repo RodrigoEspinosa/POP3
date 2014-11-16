@@ -6,7 +6,6 @@ using System.Drawing;
 
 using MetroFramework.Forms;
 using MetroFramework.Controls;
-using POP3.Models;
 using POP3;
 using POP3.AuxiliaryClases;
 
@@ -297,7 +296,7 @@ namespace POP3
         /// <param name="e"></param>
         private void clientFinishButton_Click(object sender, EventArgs e)
         {
-            CreateClients();
+            CreateClient();
         }
 
         /// <summary>
@@ -528,6 +527,10 @@ namespace POP3
         /// </summary>
         private void FillComboBoxes()
         {
+            // Fill the visits combo box.
+            visitComboBox.Items.Add("Client");
+            visitComboBox.Items.Add("Property");
+
             // Fill the propertyTypeComboBox.
             propertyTypeComboBox.Items.Add("Apartament");
             propertyTypeComboBox.Items.Add("House");
@@ -619,7 +622,9 @@ namespace POP3
                 {
                     bool apartamentDataFilled = false;
                     apartamentDataFilled = (dataFilled &&
-                                       floorsTextBox.Text != "");
+                                       floorsTextBox.Text != "" &&
+                                       apartamentNumber.Text != "");
+
                     if (apartamentDataFilled)
                     {
                         new Apartament(Int32.Parse(bedroomComboBox.SelectedItem.ToString()),
@@ -685,7 +690,7 @@ namespace POP3
             }
         }
 
-        private void CreateClients()
+        private void CreateClient()
         {
             if (clientNameTextBox.Text != "" &&
                 clientNeighborhoodComboBox.SelectedIndex != -1 &&

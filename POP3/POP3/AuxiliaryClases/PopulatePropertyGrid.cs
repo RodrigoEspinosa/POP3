@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using MetroFramework.Controls;
-using POP3.Models;
 
 namespace POP3.AuxiliaryClases
 {
     public abstract class PopulatePropertyGrid
     {
         protected int numberOfAttributes = 6;
-        public static void PopulateGrid(MetroGrid grid, IList<Property> list)
+        public static void PopulateGrid(MetroGrid grid, IList<IProperty> list)
         {
-            foreach (Property prop in list)
+            foreach (IProperty prop in list)
             {
                 for (int i = 0; i < 7; i++)
                 {

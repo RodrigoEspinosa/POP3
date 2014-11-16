@@ -1,5 +1,4 @@
 ﻿using POP3;
-using POP3.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,11 +1,8 @@
-﻿using POP3;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
-namespace POP3.Models
+using POP3;
+
+namespace POP3
 {
     public class Apartament: Property<Apartament>
     {
