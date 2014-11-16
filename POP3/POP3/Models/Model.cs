@@ -126,6 +126,44 @@ namespace POP3
 
 			return null;
 		}
+
+        public static IList<T> FilterBy(String filter, Object value)
+        {
+            // Initialize the result as an empty list of instances.
+            IList<T> result = new List<T> ();
+
+            // For each instance in the instances list for the current model.
+            foreach (T instance in Model<T>.getInstances()) {
+                // Check if the instances filtered by attribute equals to the required value.
+                if (instance.GetType().GetProperty(filter).GetValue(instance, null).Equals(value)) {
+                    // Append the instance to the result list.
+                    result.Add (instance);
+                }
+            }
+
+            // Return the result list.
+            return result;
+        }
+
+        public static IList<T> FilterBy(Dictionary<String, Object> filterBy)
+        {
+            // Initialize the result as an empty list of instances.
+            IList<T> result = new List<T>();
+
+            // For each instance in the instances list for the current model.
+            foreach (T instance in Model<T>.getInstances()) {
+                foreach (KeyValuePair<String, Object> filter in filterBy) {
+                    // Check if the instances filtered by attribute equals to the required value.
+                    if (instance.GetType().GetProperty(filter.Key).GetValue(instance, null).Equals(filter.Value)) {
+                        // Append the instance to the result list.
+                        result.Add(instance);
+                    }    
+                }
+            }
+
+            // Return the result list.
+            return result;
+        }
 	}
 }
 
