@@ -16,7 +16,12 @@ namespace POP3
             get { return this.property.Id; }
             set
             {
-                this.property = Model<Property>.GetBy("Id", value);
+                House tryHouse = Model<House>.GetBy("Id", value);
+                if (tryHouse != null) {
+                    this.property = tryHouse;
+                } else {
+                    this.property = Model<Apartament>.GetBy("Id", value);
+                }
             }
         }
 
