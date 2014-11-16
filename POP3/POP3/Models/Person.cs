@@ -4,72 +4,54 @@ using System.Drawing;
 
 namespace POP3.Models
 {
-    public abstract class Person: IPerson
+    public abstract class Person<T>: Model<T>, IPerson where T:Person<T>
     {
         protected String name;
         protected String dni;
         protected String email;
         protected String phone;
-        protected Guid id;
         protected Image profilePicture;
 
         /// <summary>
         /// Gets/Sets the Person Name.
         /// </summary>
-        public string Name
+        public String Name
         {
-            get { return this.name;}
-            set { this.name = value;}
+            get { return this.name; }
+            set { this.name = value; }
         }
 
         /// <summary>
         /// Gets/Sets the Person dni.
         /// </summary>
-        public string DNI
+        public String DNI
         {
-            get { return this.dni;}
-            set { this.dni = value;}
+            get { return this.dni; }
+            set { this.dni = value; }
         }
 
         /// <summary>
         /// Gets/Sets the Person email.
         /// </summary>
-        public string Email
+        public String Email
         {
-            get { return this.email;}
-            set { this.email = value;}
+            get { return this.email; }
+            set { this.email = value; }
         }
 
         /// <summary>
         /// Gets/Sets the Person phone.
         /// </summary>
-        public string Phone
+        public String Phone
         {
             get { return this.phone;}
             set { this.phone = value;}
-        }
-
-        /// <summary>
-        /// Gets/Sets the Person id.
-        /// </summary>
-        public Guid Id
-        {
-            get { return this.id;}
-            set { this.id = value;}
         }
 
         public Image ProfilePicture
         {
             get { return this.profilePicture; }
             set { this.profilePicture = value; }
-        }
-
-        /// <summary>
-        /// ???????????????????????????????????????????????????????????????????????????????
-        /// </summary>
-        public string Serialize()
-        {
-            throw new NotImplementedException();
         }
 
         /// <summary>

@@ -11,7 +11,7 @@ using POP3;
 
 namespace POP3
 {
-    public abstract class Verify
+    public static class Verify
     {
         /// <summary>
         /// Verify whether a string is numeric or not.
