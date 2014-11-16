@@ -479,43 +479,46 @@ namespace POP3
         }
 
         /// <summary>
-        /// Refresh the combo boxes 
-        /// with the new data.
+        /// Refresh the combo boxes with the new data.
         /// </summary>
         private void RefreshComboBoxes()
         {
+            // Clear every combo box.
+            locCountryComboBox.Items.Clear();
+            locStateComboBox.Items.Clear();
+            locCityComboBox.Items.Clear();
+            neighborhoodComboBox.Items.Clear();
+            clientNeighborhoodComboBox.Items.Clear();
+            ownerComboBox.Items.Clear();
+
             // Fill country combo boxes.
             foreach (Country country in Model<Country>.getInstances())
             {
-                locCountryComboBox.Items.Clear();
                 locCountryComboBox.Items.Add(country.Name);
             }
 
             // Fill state combo boxes.
             foreach (State state in Model<State>.getInstances())
             {
-                locStateComboBox.Items.Clear();
                 locStateComboBox.Items.Add(state.Name);
             }
 
+            // Fill the city combo boxes.
             foreach (City city in Model<City>.getInstances())
             {
-                locCityComboBox.Items.Clear();
                 locCityComboBox.Items.Add(city.Name);
             }
 
             // Fill neighborhood combo boxes.
             foreach (Neighborhood nei in Model<Neighborhood>.getInstances())
             {
-                neighborhoodComboBox.Items.Clear();
                 neighborhoodComboBox.Items.Add(nei.Name);
-
-                clientNeighborhoodComboBox.Items.Clear();
                 clientNeighborhoodComboBox.Items.Add(nei.Name);
             }
+
+            // Fill the client combo boxes.
             foreach (Client client in Model<Client>.getInstances())
             {
-                ownerComboBox.Items.Clear();
                 ownerComboBox.Items.Add(client);
             }
             
