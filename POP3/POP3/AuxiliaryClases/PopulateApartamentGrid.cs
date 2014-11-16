@@ -1,16 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
+
+using POP3.Models;
 
 namespace POP3.AuxiliaryClases
 {
-    public abstract class PopulateApartamentGrid: PopulatePropertyGrid
+    public abstract class PopulateApartamentGrid
     {
-        public override void PopulateGrid(MetroFramework.Controls.MetroGrid grid, IList<Models.Apartament> list)
+        public void PopulateGrid(MetroFramework.Controls.MetroGrid grid, IList<Apartament> list)
         {
-            base.PopulateGrid(grid, list);
+            PopulatePropertyGrid.PopulateGrid(grid, (IList<Property>)list);
+            foreach (Apartament apt in list)
+            {
+                for (int i = 0; i < 8; i++)
+                {
+                    grid[8, i].Value = apt.Floors.ToString();
+                }
+            }
         }
     }
 }

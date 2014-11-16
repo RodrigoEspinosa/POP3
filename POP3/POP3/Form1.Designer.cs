@@ -31,6 +31,7 @@ namespace POP3
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -40,32 +41,53 @@ namespace POP3
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.galleryFilterGoButton = new MetroFramework.Controls.MetroButton();
+            this.galleryMaxPriceComboBox = new POP3.CustomComboBox();
+            this.galleryMinPriceComboBox = new POP3.CustomComboBox();
             this.galleryPriceRangeCheckBox = new MetroFramework.Controls.MetroCheckBox();
+            this.galleryCountryComboBox = new POP3.CustomComboBox();
             this.galleryCountryCheckBox = new MetroFramework.Controls.MetroCheckBox();
+            this.galleryNeighborhoodComboBox = new POP3.CustomComboBox();
             this.galleryNeighborhoodCheckBox = new MetroFramework.Controls.MetroCheckBox();
+            this.galleryDormitoryComboBox = new POP3.CustomComboBox();
             this.galleryDormitoryCheckBox = new MetroFramework.Controls.MetroCheckBox();
+            this.galleryGarageComboBox = new POP3.CustomComboBox();
             this.galleryGarageCheckBox = new MetroFramework.Controls.MetroCheckBox();
             this.galleryHouseCheckBox = new MetroFramework.Controls.MetroCheckBox();
             this.galleryForRentCheckBox = new MetroFramework.Controls.MetroCheckBox();
             this.galleryForSaleCheckBox = new MetroFramework.Controls.MetroCheckBox();
             this.galleryApartamentCheckBox = new MetroFramework.Controls.MetroCheckBox();
+            this.galleryCustomPictureBox = new POP3.CustomPictureBox();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabControl2 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage6 = new MetroFramework.Controls.MetroTabPage();
             this.createPropertyFinishButton = new MetroFramework.Controls.MetroButton();
+            this.floorsTextBox = new POP3.CustomTextBox();
             this.metroProgressBar1 = new MetroFramework.Controls.MetroProgressBar();
             this.floorsLabel = new MetroFramework.Controls.MetroLabel();
             this.gardenCheckBox = new MetroFramework.Controls.MetroCheckBox();
             this.metroLabel17 = new MetroFramework.Controls.MetroLabel();
+            this.apartamentNumber = new POP3.CustomTextBox();
+            this.garageComboBox = new POP3.CustomComboBox();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.selectImageButton = new MetroFramework.Controls.MetroButton();
             this.finishButton = new MetroFramework.Controls.MetroButton();
+            this.conditionComboBox = new POP3.CustomComboBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.forRentCheckBox = new MetroFramework.Controls.MetroCheckBox();
             this.forSaleCheckBox = new MetroFramework.Controls.MetroCheckBox();
+            this.ownerComboBox = new POP3.CustomComboBox();
+            this.bathroomComboBox = new POP3.CustomComboBox();
+            this.bedroomComboBox = new POP3.CustomComboBox();
+            this.neighborhoodComboBox = new POP3.CustomComboBox();
+            this.propertyTypeComboBox = new POP3.CustomComboBox();
+            this.builtYearComboBox = new POP3.CustomComboBox();
+            this.squareMeterTextBox = new POP3.CustomTextBox();
+            this.doorNumberTextBox = new POP3.CustomTextBox();
+            this.sideStreetTextBox = new POP3.CustomTextBox();
+            this.mainStreetTextBox = new POP3.CustomTextBox();
+            this.propertyPictureBox = new POP3.CustomPictureBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.ownerLabel = new MetroFramework.Controls.MetroLabel();
             this.bathroomsLabel = new MetroFramework.Controls.MetroLabel();
@@ -92,43 +114,6 @@ namespace POP3
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroTabPage7 = new MetroFramework.Controls.MetroTabPage();
-            this.clientRentHisPropertyCheck = new MetroFramework.Controls.MetroCheckBox();
-            this.clientSellHisPropertyCheck = new MetroFramework.Controls.MetroCheckBox();
-            this.clientRentPropertyCheck = new MetroFramework.Controls.MetroCheckBox();
-            this.clientBuyPropertyCheck = new MetroFramework.Controls.MetroCheckBox();
-            this.clientFinishButton = new MetroFramework.Controls.MetroButton();
-            this.metroLabel20 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
-            this.selectClientAvatar = new MetroFramework.Controls.MetroButton();
-            this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
-            this.modApartamentDataGrid = new MetroFramework.Controls.MetroGrid();
-            this.modHouseDataGrid = new MetroFramework.Controls.MetroGrid();
-            this.metroLabel21 = new MetroFramework.Controls.MetroLabel();
-            this.modificationsGrid = new MetroFramework.Controls.MetroGrid();
-            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.addClientMetroTile = new MetroFramework.Controls.MetroTile();
-            this.addPropertyMetroTile = new MetroFramework.Controls.MetroTile();
-            this.welcomeLabel = new MetroFramework.Controls.MetroLabel();
-            this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
-            this.floorsTextBox = new POP3.CustomTextBox();
-            this.apartamentNumber = new POP3.CustomTextBox();
-            this.garageComboBox = new POP3.CustomComboBox();
-            this.conditionComboBox = new POP3.CustomComboBox();
-            this.ownerComboBox = new POP3.CustomComboBox();
-            this.bathroomComboBox = new POP3.CustomComboBox();
-            this.bedroomComboBox = new POP3.CustomComboBox();
-            this.neighborhoodComboBox = new POP3.CustomComboBox();
-            this.propertyTypeComboBox = new POP3.CustomComboBox();
-            this.builtYearComboBox = new POP3.CustomComboBox();
-            this.squareMeterTextBox = new POP3.CustomTextBox();
-            this.doorNumberTextBox = new POP3.CustomTextBox();
-            this.sideStreetTextBox = new POP3.CustomTextBox();
-            this.mainStreetTextBox = new POP3.CustomTextBox();
-            this.propertyPictureBox = new POP3.CustomPictureBox();
             this.locCityComboBox = new POP3.CustomComboBox();
             this.locStateComboBox = new POP3.CustomComboBox();
             this.locCountryComboBox = new POP3.CustomComboBox();
@@ -136,20 +121,26 @@ namespace POP3
             this.locCityTextBox = new POP3.CustomTextBox();
             this.locStateTextBox = new POP3.CustomTextBox();
             this.locCountryTextBox = new POP3.CustomTextBox();
+            this.metroTabPage7 = new MetroFramework.Controls.MetroTabPage();
+            this.clientRentHisPropertyCheck = new MetroFramework.Controls.MetroCheckBox();
+            this.clientSellHisPropertyCheck = new MetroFramework.Controls.MetroCheckBox();
+            this.clientRentPropertyCheck = new MetroFramework.Controls.MetroCheckBox();
+            this.clientBuyPropertyCheck = new MetroFramework.Controls.MetroCheckBox();
             this.clientNeighborhoodComboBox = new POP3.CustomComboBox();
+            this.clientFinishButton = new MetroFramework.Controls.MetroButton();
+            this.metroLabel20 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
+            this.selectClientAvatar = new MetroFramework.Controls.MetroButton();
             this.clientEmailTextBox = new POP3.CustomTextBox();
             this.clientPhoneTextBox = new POP3.CustomTextBox();
             this.clientIdTextBox = new POP3.CustomTextBox();
             this.clientNameTextBox = new POP3.CustomTextBox();
             this.clientPictureBox = new POP3.CustomPictureBox();
-            this.modificationsComboBox = new POP3.CustomComboBox();
-            this.galleryMaxPriceComboBox = new POP3.CustomComboBox();
-            this.galleryMinPriceComboBox = new POP3.CustomComboBox();
-            this.galleryCountryComboBox = new POP3.CustomComboBox();
-            this.galleryNeighborhoodComboBox = new POP3.CustomComboBox();
-            this.galleryDormitoryComboBox = new POP3.CustomComboBox();
-            this.galleryGarageComboBox = new POP3.CustomComboBox();
-            this.galleryCustomPictureBox = new POP3.CustomPictureBox();
+            this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
+            this.modApartamentDataGrid = new MetroFramework.Controls.MetroGrid();
             this.Bedrooms = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -157,21 +148,30 @@ namespace POP3
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modHouseDataGrid = new MetroFramework.Controls.MetroGrid();
+            this.metroLabel21 = new MetroFramework.Controls.MetroLabel();
+            this.modificationsComboBox = new POP3.CustomComboBox();
+            this.modificationsGrid = new MetroFramework.Controls.MetroGrid();
+            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.addClientMetroTile = new MetroFramework.Controls.MetroTile();
+            this.addPropertyMetroTile = new MetroFramework.Controls.MetroTile();
+            this.welcomeLabel = new MetroFramework.Controls.MetroLabel();
+            this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.galleryCustomPictureBox)).BeginInit();
             this.metroTabPage2.SuspendLayout();
             this.metroTabControl2.SuspendLayout();
             this.metroTabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.propertyPictureBox)).BeginInit();
             this.locationTab.SuspendLayout();
             this.metroTabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientPictureBox)).BeginInit();
             this.metroTabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.modApartamentDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modHouseDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modificationsGrid)).BeginInit();
             this.metroTabPage1.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.propertyPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.galleryCustomPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTabPage3
@@ -214,6 +214,34 @@ namespace POP3
             this.galleryFilterGoButton.Text = "Filter";
             this.galleryFilterGoButton.UseSelectable = true;
             // 
+            // galleryMaxPriceComboBox
+            // 
+            this.galleryMaxPriceComboBox.DropDownHeight = 60;
+            this.galleryMaxPriceComboBox.FormattingEnabled = true;
+            this.galleryMaxPriceComboBox.IntegralHeight = false;
+            this.galleryMaxPriceComboBox.ItemHeight = 23;
+            this.galleryMaxPriceComboBox.Location = new System.Drawing.Point(114, 299);
+            this.galleryMaxPriceComboBox.Name = "galleryMaxPriceComboBox";
+            this.galleryMaxPriceComboBox.PromptText = "Value...";
+            this.galleryMaxPriceComboBox.Size = new System.Drawing.Size(99, 29);
+            this.galleryMaxPriceComboBox.TabIndex = 17;
+            this.galleryMaxPriceComboBox.UseSelectable = true;
+            this.galleryMaxPriceComboBox.Visible = false;
+            // 
+            // galleryMinPriceComboBox
+            // 
+            this.galleryMinPriceComboBox.DropDownHeight = 60;
+            this.galleryMinPriceComboBox.FormattingEnabled = true;
+            this.galleryMinPriceComboBox.IntegralHeight = false;
+            this.galleryMinPriceComboBox.ItemHeight = 23;
+            this.galleryMinPriceComboBox.Location = new System.Drawing.Point(114, 264);
+            this.galleryMinPriceComboBox.Name = "galleryMinPriceComboBox";
+            this.galleryMinPriceComboBox.PromptText = "Value...";
+            this.galleryMinPriceComboBox.Size = new System.Drawing.Size(99, 29);
+            this.galleryMinPriceComboBox.TabIndex = 16;
+            this.galleryMinPriceComboBox.UseSelectable = true;
+            this.galleryMinPriceComboBox.Visible = false;
+            // 
             // galleryPriceRangeCheckBox
             // 
             this.galleryPriceRangeCheckBox.AutoSize = true;
@@ -224,6 +252,19 @@ namespace POP3
             this.galleryPriceRangeCheckBox.Text = "Price Range";
             this.galleryPriceRangeCheckBox.UseSelectable = true;
             this.galleryPriceRangeCheckBox.CheckedChanged += new System.EventHandler(this.IsPriceRangeFilter_Cheked);
+            // 
+            // galleryCountryComboBox
+            // 
+            this.galleryCountryComboBox.DropDownHeight = 60;
+            this.galleryCountryComboBox.FormattingEnabled = true;
+            this.galleryCountryComboBox.IntegralHeight = false;
+            this.galleryCountryComboBox.ItemHeight = 23;
+            this.galleryCountryComboBox.Location = new System.Drawing.Point(114, 194);
+            this.galleryCountryComboBox.Name = "galleryCountryComboBox";
+            this.galleryCountryComboBox.Size = new System.Drawing.Size(99, 29);
+            this.galleryCountryComboBox.TabIndex = 14;
+            this.galleryCountryComboBox.UseSelectable = true;
+            this.galleryCountryComboBox.Visible = false;
             // 
             // galleryCountryCheckBox
             // 
@@ -236,6 +277,19 @@ namespace POP3
             this.galleryCountryCheckBox.UseSelectable = true;
             this.galleryCountryCheckBox.CheckedChanged += new System.EventHandler(this.IsCountryFilter_Cheked);
             // 
+            // galleryNeighborhoodComboBox
+            // 
+            this.galleryNeighborhoodComboBox.DropDownHeight = 60;
+            this.galleryNeighborhoodComboBox.FormattingEnabled = true;
+            this.galleryNeighborhoodComboBox.IntegralHeight = false;
+            this.galleryNeighborhoodComboBox.ItemHeight = 23;
+            this.galleryNeighborhoodComboBox.Location = new System.Drawing.Point(114, 229);
+            this.galleryNeighborhoodComboBox.Name = "galleryNeighborhoodComboBox";
+            this.galleryNeighborhoodComboBox.Size = new System.Drawing.Size(99, 29);
+            this.galleryNeighborhoodComboBox.TabIndex = 12;
+            this.galleryNeighborhoodComboBox.UseSelectable = true;
+            this.galleryNeighborhoodComboBox.Visible = false;
+            // 
             // galleryNeighborhoodCheckBox
             // 
             this.galleryNeighborhoodCheckBox.AutoSize = true;
@@ -247,6 +301,17 @@ namespace POP3
             this.galleryNeighborhoodCheckBox.UseSelectable = true;
             this.galleryNeighborhoodCheckBox.CheckedChanged += new System.EventHandler(this.IsNeighborhoodFilter_Cheked);
             // 
+            // galleryDormitoryComboBox
+            // 
+            this.galleryDormitoryComboBox.FormattingEnabled = true;
+            this.galleryDormitoryComboBox.ItemHeight = 23;
+            this.galleryDormitoryComboBox.Location = new System.Drawing.Point(114, 159);
+            this.galleryDormitoryComboBox.Name = "galleryDormitoryComboBox";
+            this.galleryDormitoryComboBox.Size = new System.Drawing.Size(99, 29);
+            this.galleryDormitoryComboBox.TabIndex = 10;
+            this.galleryDormitoryComboBox.UseSelectable = true;
+            this.galleryDormitoryComboBox.Visible = false;
+            // 
             // galleryDormitoryCheckBox
             // 
             this.galleryDormitoryCheckBox.AutoSize = true;
@@ -257,6 +322,17 @@ namespace POP3
             this.galleryDormitoryCheckBox.Text = "Dormitories";
             this.galleryDormitoryCheckBox.UseSelectable = true;
             this.galleryDormitoryCheckBox.CheckedChanged += new System.EventHandler(this.IsDormitoriyFilter_Cheked);
+            // 
+            // galleryGarageComboBox
+            // 
+            this.galleryGarageComboBox.FormattingEnabled = true;
+            this.galleryGarageComboBox.ItemHeight = 23;
+            this.galleryGarageComboBox.Location = new System.Drawing.Point(114, 124);
+            this.galleryGarageComboBox.Name = "galleryGarageComboBox";
+            this.galleryGarageComboBox.Size = new System.Drawing.Size(99, 29);
+            this.galleryGarageComboBox.TabIndex = 8;
+            this.galleryGarageComboBox.UseSelectable = true;
+            this.galleryGarageComboBox.Visible = false;
             // 
             // galleryGarageCheckBox
             // 
@@ -309,6 +385,16 @@ namespace POP3
             this.galleryApartamentCheckBox.Text = "Apartament";
             this.galleryApartamentCheckBox.UseSelectable = true;
             // 
+            // galleryCustomPictureBox
+            // 
+            this.galleryCustomPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("galleryCustomPictureBox.InitialImage")));
+            this.galleryCustomPictureBox.Location = new System.Drawing.Point(371, 16);
+            this.galleryCustomPictureBox.Name = "galleryCustomPictureBox";
+            this.galleryCustomPictureBox.Size = new System.Drawing.Size(503, 392);
+            this.galleryCustomPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.galleryCustomPictureBox.TabIndex = 2;
+            this.galleryCustomPictureBox.TabStop = false;
+            // 
             // metroTabPage2
             // 
             this.metroTabPage2.Controls.Add(this.metroTabControl2);
@@ -333,7 +419,7 @@ namespace POP3
             this.metroTabControl2.Location = new System.Drawing.Point(-4, 8);
             this.metroTabControl2.Multiline = true;
             this.metroTabControl2.Name = "metroTabControl2";
-            this.metroTabControl2.SelectedIndex = 3;
+            this.metroTabControl2.SelectedIndex = 0;
             this.metroTabControl2.Size = new System.Drawing.Size(1010, 582);
             this.metroTabControl2.TabIndex = 2;
             this.metroTabControl2.UseSelectable = true;
@@ -398,6 +484,22 @@ namespace POP3
             this.createPropertyFinishButton.UseSelectable = true;
             this.createPropertyFinishButton.Click += new System.EventHandler(this.createPropertyFinishButton_Click);
             // 
+            // floorsTextBox
+            // 
+            this.floorsTextBox.Lines = new string[0];
+            this.floorsTextBox.Location = new System.Drawing.Point(164, 423);
+            this.floorsTextBox.MaxLength = 32767;
+            this.floorsTextBox.Name = "floorsTextBox";
+            this.floorsTextBox.PasswordChar = '\0';
+            this.floorsTextBox.PromptText = "The number of floors...";
+            this.floorsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.floorsTextBox.SelectedText = "";
+            this.floorsTextBox.Size = new System.Drawing.Size(215, 23);
+            this.floorsTextBox.TabIndex = 275;
+            this.floorsTextBox.UseSelectable = true;
+            this.floorsTextBox.Visible = false;
+            this.floorsTextBox.TextChanged += new System.EventHandler(this.floorsTextBox_TextChanged);
+            // 
             // metroProgressBar1
             // 
             this.metroProgressBar1.Location = new System.Drawing.Point(44, 545);
@@ -434,6 +536,35 @@ namespace POP3
             this.metroLabel17.TabIndex = 271;
             this.metroLabel17.Text = "Garden";
             // 
+            // apartamentNumber
+            // 
+            this.apartamentNumber.Lines = new string[0];
+            this.apartamentNumber.Location = new System.Drawing.Point(406, 115);
+            this.apartamentNumber.MaxLength = 32767;
+            this.apartamentNumber.Name = "apartamentNumber";
+            this.apartamentNumber.PasswordChar = '\0';
+            this.apartamentNumber.PromptText = "The Apt. number...";
+            this.apartamentNumber.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.apartamentNumber.SelectedText = "";
+            this.apartamentNumber.Size = new System.Drawing.Size(111, 23);
+            this.apartamentNumber.TabIndex = 270;
+            this.apartamentNumber.UseSelectable = true;
+            this.apartamentNumber.Visible = false;
+            this.apartamentNumber.TextChanged += new System.EventHandler(this.apartamentNumber_TextChanged);
+            // 
+            // garageComboBox
+            // 
+            this.garageComboBox.DropDownHeight = 100;
+            this.garageComboBox.FormattingEnabled = true;
+            this.garageComboBox.IntegralHeight = false;
+            this.garageComboBox.ItemHeight = 23;
+            this.garageComboBox.Location = new System.Drawing.Point(164, 312);
+            this.garageComboBox.Name = "garageComboBox";
+            this.garageComboBox.PromptText = "Select number of garages";
+            this.garageComboBox.Size = new System.Drawing.Size(215, 29);
+            this.garageComboBox.TabIndex = 269;
+            this.garageComboBox.UseSelectable = true;
+            // 
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
@@ -463,6 +594,19 @@ namespace POP3
             this.finishButton.UseSelectable = true;
             this.finishButton.Click += new System.EventHandler(this.finishButton_Click);
             // 
+            // conditionComboBox
+            // 
+            this.conditionComboBox.DropDownHeight = 100;
+            this.conditionComboBox.FormattingEnabled = true;
+            this.conditionComboBox.IntegralHeight = false;
+            this.conditionComboBox.ItemHeight = 23;
+            this.conditionComboBox.Location = new System.Drawing.Point(164, 347);
+            this.conditionComboBox.Name = "conditionComboBox";
+            this.conditionComboBox.PromptText = "Select the property condition";
+            this.conditionComboBox.Size = new System.Drawing.Size(215, 29);
+            this.conditionComboBox.TabIndex = 264;
+            this.conditionComboBox.UseSelectable = true;
+            // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
@@ -491,6 +635,157 @@ namespace POP3
             this.forSaleCheckBox.TabIndex = 13;
             this.forSaleCheckBox.Text = "For Sale";
             this.forSaleCheckBox.UseSelectable = true;
+            // 
+            // ownerComboBox
+            // 
+            this.ownerComboBox.DropDownHeight = 100;
+            this.ownerComboBox.FormattingEnabled = true;
+            this.ownerComboBox.IntegralHeight = false;
+            this.ownerComboBox.ItemHeight = 23;
+            this.ownerComboBox.Location = new System.Drawing.Point(164, 383);
+            this.ownerComboBox.Name = "ownerComboBox";
+            this.ownerComboBox.PromptText = "Select the owner";
+            this.ownerComboBox.Size = new System.Drawing.Size(215, 29);
+            this.ownerComboBox.TabIndex = 11;
+            this.ownerComboBox.UseSelectable = true;
+            // 
+            // bathroomComboBox
+            // 
+            this.bathroomComboBox.DropDownHeight = 100;
+            this.bathroomComboBox.FormattingEnabled = true;
+            this.bathroomComboBox.IntegralHeight = false;
+            this.bathroomComboBox.ItemHeight = 23;
+            this.bathroomComboBox.Location = new System.Drawing.Point(164, 277);
+            this.bathroomComboBox.Name = "bathroomComboBox";
+            this.bathroomComboBox.PromptText = "Select number of bathrooms";
+            this.bathroomComboBox.Size = new System.Drawing.Size(215, 29);
+            this.bathroomComboBox.TabIndex = 10;
+            this.bathroomComboBox.UseSelectable = true;
+            // 
+            // bedroomComboBox
+            // 
+            this.bedroomComboBox.DropDownHeight = 100;
+            this.bedroomComboBox.FormattingEnabled = true;
+            this.bedroomComboBox.IntegralHeight = false;
+            this.bedroomComboBox.ItemHeight = 23;
+            this.bedroomComboBox.Location = new System.Drawing.Point(164, 245);
+            this.bedroomComboBox.Name = "bedroomComboBox";
+            this.bedroomComboBox.PromptText = "Select number of bedrooms";
+            this.bedroomComboBox.Size = new System.Drawing.Size(215, 29);
+            this.bedroomComboBox.TabIndex = 9;
+            this.bedroomComboBox.UseSelectable = true;
+            // 
+            // neighborhoodComboBox
+            // 
+            this.neighborhoodComboBox.DropDownHeight = 100;
+            this.neighborhoodComboBox.FormattingEnabled = true;
+            this.neighborhoodComboBox.IntegralHeight = false;
+            this.neighborhoodComboBox.ItemHeight = 23;
+            this.neighborhoodComboBox.Location = new System.Drawing.Point(164, 143);
+            this.neighborhoodComboBox.Name = "neighborhoodComboBox";
+            this.neighborhoodComboBox.PromptText = "Select the neighborhood";
+            this.neighborhoodComboBox.Size = new System.Drawing.Size(215, 29);
+            this.neighborhoodComboBox.TabIndex = 5;
+            this.neighborhoodComboBox.UseSelectable = true;
+            // 
+            // propertyTypeComboBox
+            // 
+            this.propertyTypeComboBox.DropDownHeight = 100;
+            this.propertyTypeComboBox.FontSize = MetroFramework.MetroComboBoxSize.Small;
+            this.propertyTypeComboBox.FormattingEnabled = true;
+            this.propertyTypeComboBox.IntegralHeight = false;
+            this.propertyTypeComboBox.ItemHeight = 19;
+            this.propertyTypeComboBox.Location = new System.Drawing.Point(164, 19);
+            this.propertyTypeComboBox.Name = "propertyTypeComboBox";
+            this.propertyTypeComboBox.PromptText = "Select the type of property";
+            this.propertyTypeComboBox.Size = new System.Drawing.Size(215, 25);
+            this.propertyTypeComboBox.TabIndex = 1;
+            this.propertyTypeComboBox.UseSelectable = true;
+            this.propertyTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.propertyTypeComboBox_SelectionChangeCommitted);
+            this.propertyTypeComboBox.SelectionChangeCommitted += new System.EventHandler(this.propertyTypeComboBox_SelectionChangeCommitted);
+            // 
+            // builtYearComboBox
+            // 
+            this.builtYearComboBox.DropDownHeight = 100;
+            this.builtYearComboBox.FormattingEnabled = true;
+            this.builtYearComboBox.IntegralHeight = false;
+            this.builtYearComboBox.ItemHeight = 23;
+            this.builtYearComboBox.Location = new System.Drawing.Point(164, 181);
+            this.builtYearComboBox.Name = "builtYearComboBox";
+            this.builtYearComboBox.PromptText = "Select the year of built";
+            this.builtYearComboBox.Size = new System.Drawing.Size(215, 29);
+            this.builtYearComboBox.TabIndex = 7;
+            this.builtYearComboBox.UseSelectable = true;
+            // 
+            // squareMeterTextBox
+            // 
+            this.squareMeterTextBox.Lines = new string[0];
+            this.squareMeterTextBox.Location = new System.Drawing.Point(164, 216);
+            this.squareMeterTextBox.MaxLength = 32767;
+            this.squareMeterTextBox.Name = "squareMeterTextBox";
+            this.squareMeterTextBox.PasswordChar = '\0';
+            this.squareMeterTextBox.PromptText = "The square meters...";
+            this.squareMeterTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.squareMeterTextBox.SelectedText = "";
+            this.squareMeterTextBox.Size = new System.Drawing.Size(215, 23);
+            this.squareMeterTextBox.TabIndex = 8;
+            this.squareMeterTextBox.UseSelectable = true;
+            this.squareMeterTextBox.TextChanged += new System.EventHandler(this.squareMeterTextBox_TextChanged);
+            // 
+            // doorNumberTextBox
+            // 
+            this.doorNumberTextBox.Lines = new string[0];
+            this.doorNumberTextBox.Location = new System.Drawing.Point(164, 114);
+            this.doorNumberTextBox.MaxLength = 32767;
+            this.doorNumberTextBox.Name = "doorNumberTextBox";
+            this.doorNumberTextBox.PasswordChar = '\0';
+            this.doorNumberTextBox.PromptText = "The door number...";
+            this.doorNumberTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.doorNumberTextBox.SelectedText = "";
+            this.doorNumberTextBox.Size = new System.Drawing.Size(215, 23);
+            this.doorNumberTextBox.TabIndex = 4;
+            this.doorNumberTextBox.UseSelectable = true;
+            this.doorNumberTextBox.TextChanged += new System.EventHandler(this.doorNumberTextBox_TextChanged);
+            // 
+            // sideStreetTextBox
+            // 
+            this.sideStreetTextBox.Lines = new string[0];
+            this.sideStreetTextBox.Location = new System.Drawing.Point(164, 84);
+            this.sideStreetTextBox.MaxLength = 32767;
+            this.sideStreetTextBox.Name = "sideStreetTextBox";
+            this.sideStreetTextBox.PasswordChar = '\0';
+            this.sideStreetTextBox.PromptText = "The name of the street...";
+            this.sideStreetTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.sideStreetTextBox.SelectedText = "";
+            this.sideStreetTextBox.Size = new System.Drawing.Size(215, 23);
+            this.sideStreetTextBox.TabIndex = 3;
+            this.sideStreetTextBox.UseSelectable = true;
+            this.sideStreetTextBox.TextChanged += new System.EventHandler(this.sideStreetTextBox_TextChanged);
+            // 
+            // mainStreetTextBox
+            // 
+            this.mainStreetTextBox.Lines = new string[0];
+            this.mainStreetTextBox.Location = new System.Drawing.Point(164, 54);
+            this.mainStreetTextBox.MaxLength = 32767;
+            this.mainStreetTextBox.Name = "mainStreetTextBox";
+            this.mainStreetTextBox.PasswordChar = '\0';
+            this.mainStreetTextBox.PromptText = "The name of the street...";
+            this.mainStreetTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mainStreetTextBox.SelectedText = "";
+            this.mainStreetTextBox.Size = new System.Drawing.Size(215, 23);
+            this.mainStreetTextBox.TabIndex = 262;
+            this.mainStreetTextBox.UseSelectable = true;
+            this.mainStreetTextBox.TextChanged += new System.EventHandler(this.mainStreetTextBox_TextChanged);
+            // 
+            // propertyPictureBox
+            // 
+            this.propertyPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("propertyPictureBox.InitialImage")));
+            this.propertyPictureBox.Location = new System.Drawing.Point(572, 19);
+            this.propertyPictureBox.Name = "propertyPictureBox";
+            this.propertyPictureBox.Size = new System.Drawing.Size(372, 294);
+            this.propertyPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.propertyPictureBox.TabIndex = 25;
+            this.propertyPictureBox.TabStop = false;
             // 
             // metroLabel1
             // 
@@ -774,6 +1069,107 @@ namespace POP3
             this.metroLabel2.TabIndex = 13;
             this.metroLabel2.Text = "Country";
             // 
+            // locCityComboBox
+            // 
+            this.locCityComboBox.FormattingEnabled = true;
+            this.locCityComboBox.ItemHeight = 23;
+            this.locCityComboBox.Location = new System.Drawing.Point(211, 272);
+            this.locCityComboBox.Name = "locCityComboBox";
+            this.locCityComboBox.Size = new System.Drawing.Size(179, 29);
+            this.locCityComboBox.TabIndex = 7;
+            this.locCityComboBox.UseSelectable = true;
+            // 
+            // locStateComboBox
+            // 
+            this.locStateComboBox.FormattingEnabled = true;
+            this.locStateComboBox.ItemHeight = 23;
+            this.locStateComboBox.Location = new System.Drawing.Point(588, 117);
+            this.locStateComboBox.Name = "locStateComboBox";
+            this.locStateComboBox.Size = new System.Drawing.Size(179, 29);
+            this.locStateComboBox.TabIndex = 6;
+            this.locStateComboBox.UseSelectable = true;
+            // 
+            // locCountryComboBox
+            // 
+            this.locCountryComboBox.AutoCompleteCustomSource.AddRange(new string[] {
+            "Uruguay",
+            "Uganda",
+            "Universal",
+            "Unagui",
+            "Nicaragua"});
+            this.locCountryComboBox.DropDownHeight = 110;
+            this.locCountryComboBox.FormattingEnabled = true;
+            this.locCountryComboBox.IntegralHeight = false;
+            this.locCountryComboBox.ItemHeight = 23;
+            this.locCountryComboBox.Location = new System.Drawing.Point(211, 117);
+            this.locCountryComboBox.Name = "locCountryComboBox";
+            this.locCountryComboBox.Size = new System.Drawing.Size(179, 29);
+            this.locCountryComboBox.TabIndex = 5;
+            this.locCountryComboBox.UseSelectable = true;
+            // 
+            // locNeighborhoodTextBox
+            // 
+            this.locNeighborhoodTextBox.Lines = new string[0];
+            this.locNeighborhoodTextBox.Location = new System.Drawing.Point(588, 277);
+            this.locNeighborhoodTextBox.MaxLength = 32767;
+            this.locNeighborhoodTextBox.Name = "locNeighborhoodTextBox";
+            this.locNeighborhoodTextBox.PasswordChar = '\0';
+            this.locNeighborhoodTextBox.PromptText = "Input neighborhood name...";
+            this.locNeighborhoodTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.locNeighborhoodTextBox.SelectedText = "";
+            this.locNeighborhoodTextBox.Size = new System.Drawing.Size(179, 23);
+            this.locNeighborhoodTextBox.TabIndex = 12;
+            this.locNeighborhoodTextBox.UseSelectable = true;
+            this.locNeighborhoodTextBox.TextChanged += new System.EventHandler(this.locNeighborhoodTextBox_TextChanged);
+            // 
+            // locCityTextBox
+            // 
+            this.locCityTextBox.Lines = new string[0];
+            this.locCityTextBox.Location = new System.Drawing.Point(211, 325);
+            this.locCityTextBox.MaxLength = 32767;
+            this.locCityTextBox.Name = "locCityTextBox";
+            this.locCityTextBox.PasswordChar = '\0';
+            this.locCityTextBox.PromptText = "Input city name...";
+            this.locCityTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.locCityTextBox.SelectedText = "";
+            this.locCityTextBox.Size = new System.Drawing.Size(179, 23);
+            this.locCityTextBox.TabIndex = 11;
+            this.locCityTextBox.UseSelectable = true;
+            this.locCityTextBox.Visible = false;
+            this.locCityTextBox.TextChanged += new System.EventHandler(this.locCityTextBox_TextChanged);
+            // 
+            // locStateTextBox
+            // 
+            this.locStateTextBox.Lines = new string[0];
+            this.locStateTextBox.Location = new System.Drawing.Point(588, 162);
+            this.locStateTextBox.MaxLength = 32767;
+            this.locStateTextBox.Name = "locStateTextBox";
+            this.locStateTextBox.PasswordChar = '\0';
+            this.locStateTextBox.PromptText = "Input state name...";
+            this.locStateTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.locStateTextBox.SelectedText = "";
+            this.locStateTextBox.Size = new System.Drawing.Size(179, 23);
+            this.locStateTextBox.TabIndex = 10;
+            this.locStateTextBox.UseSelectable = true;
+            this.locStateTextBox.Visible = false;
+            this.locStateTextBox.TextChanged += new System.EventHandler(this.locStateTextBox_TextChanged);
+            // 
+            // locCountryTextBox
+            // 
+            this.locCountryTextBox.Lines = new string[0];
+            this.locCountryTextBox.Location = new System.Drawing.Point(211, 162);
+            this.locCountryTextBox.MaxLength = 32767;
+            this.locCountryTextBox.Name = "locCountryTextBox";
+            this.locCountryTextBox.PasswordChar = '\0';
+            this.locCountryTextBox.PromptText = "Input country name...";
+            this.locCountryTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.locCountryTextBox.SelectedText = "";
+            this.locCountryTextBox.Size = new System.Drawing.Size(179, 23);
+            this.locCountryTextBox.TabIndex = 9;
+            this.locCountryTextBox.UseSelectable = true;
+            this.locCountryTextBox.Visible = false;
+            this.locCountryTextBox.TextChanged += new System.EventHandler(this.locCountryTextBox_TextChanged);
+            // 
             // metroTabPage7
             // 
             this.metroTabPage7.Controls.Add(this.clientRentHisPropertyCheck);
@@ -845,6 +1241,16 @@ namespace POP3
             this.clientBuyPropertyCheck.Text = "Want to buy a property?";
             this.clientBuyPropertyCheck.UseSelectable = true;
             // 
+            // clientNeighborhoodComboBox
+            // 
+            this.clientNeighborhoodComboBox.FormattingEnabled = true;
+            this.clientNeighborhoodComboBox.ItemHeight = 23;
+            this.clientNeighborhoodComboBox.Location = new System.Drawing.Point(288, 92);
+            this.clientNeighborhoodComboBox.Name = "clientNeighborhoodComboBox";
+            this.clientNeighborhoodComboBox.Size = new System.Drawing.Size(184, 29);
+            this.clientNeighborhoodComboBox.TabIndex = 17;
+            this.clientNeighborhoodComboBox.UseSelectable = true;
+            // 
             // clientFinishButton
             // 
             this.clientFinishButton.Location = new System.Drawing.Point(432, 390);
@@ -909,6 +1315,75 @@ namespace POP3
             this.selectClientAvatar.Text = "Select";
             this.selectClientAvatar.UseSelectable = true;
             this.selectClientAvatar.Click += new System.EventHandler(this.selectClientAvatar_Click);
+            // 
+            // clientEmailTextBox
+            // 
+            this.clientEmailTextBox.Lines = new string[0];
+            this.clientEmailTextBox.Location = new System.Drawing.Point(288, 226);
+            this.clientEmailTextBox.MaxLength = 32767;
+            this.clientEmailTextBox.Name = "clientEmailTextBox";
+            this.clientEmailTextBox.PasswordChar = '\0';
+            this.clientEmailTextBox.PromptText = "The client email...";
+            this.clientEmailTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.clientEmailTextBox.SelectedText = "";
+            this.clientEmailTextBox.Size = new System.Drawing.Size(184, 23);
+            this.clientEmailTextBox.TabIndex = 15;
+            this.clientEmailTextBox.UseSelectable = true;
+            // 
+            // clientPhoneTextBox
+            // 
+            this.clientPhoneTextBox.Lines = new string[0];
+            this.clientPhoneTextBox.Location = new System.Drawing.Point(287, 185);
+            this.clientPhoneTextBox.MaxLength = 32767;
+            this.clientPhoneTextBox.Name = "clientPhoneTextBox";
+            this.clientPhoneTextBox.PasswordChar = '\0';
+            this.clientPhoneTextBox.PromptText = "The client phone ...";
+            this.clientPhoneTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.clientPhoneTextBox.SelectedText = "";
+            this.clientPhoneTextBox.Size = new System.Drawing.Size(184, 23);
+            this.clientPhoneTextBox.TabIndex = 14;
+            this.clientPhoneTextBox.UseSelectable = true;
+            this.clientPhoneTextBox.TextChanged += new System.EventHandler(this.clientPhoneTextBox_TextChanged);
+            // 
+            // clientIdTextBox
+            // 
+            this.clientIdTextBox.Lines = new string[0];
+            this.clientIdTextBox.Location = new System.Drawing.Point(287, 144);
+            this.clientIdTextBox.MaxLength = 32767;
+            this.clientIdTextBox.Name = "clientIdTextBox";
+            this.clientIdTextBox.PasswordChar = '\0';
+            this.clientIdTextBox.PromptText = "The client id...";
+            this.clientIdTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.clientIdTextBox.SelectedText = "";
+            this.clientIdTextBox.Size = new System.Drawing.Size(184, 23);
+            this.clientIdTextBox.TabIndex = 13;
+            this.clientIdTextBox.UseSelectable = true;
+            this.clientIdTextBox.TextChanged += new System.EventHandler(this.clientIdTextBox_TextChanged);
+            // 
+            // clientNameTextBox
+            // 
+            this.clientNameTextBox.Lines = new string[0];
+            this.clientNameTextBox.Location = new System.Drawing.Point(288, 52);
+            this.clientNameTextBox.MaxLength = 32767;
+            this.clientNameTextBox.Name = "clientNameTextBox";
+            this.clientNameTextBox.PasswordChar = '\0';
+            this.clientNameTextBox.PromptText = "The client name...";
+            this.clientNameTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.clientNameTextBox.SelectedText = "";
+            this.clientNameTextBox.Size = new System.Drawing.Size(184, 23);
+            this.clientNameTextBox.TabIndex = 4;
+            this.clientNameTextBox.UseSelectable = true;
+            this.clientNameTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.clientNameTextBox_KeyUp);
+            // 
+            // clientPictureBox
+            // 
+            this.clientPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("clientPictureBox.InitialImage")));
+            this.clientPictureBox.Location = new System.Drawing.Point(509, 40);
+            this.clientPictureBox.Name = "clientPictureBox";
+            this.clientPictureBox.Size = new System.Drawing.Size(208, 225);
+            this.clientPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.clientPictureBox.TabIndex = 2;
+            this.clientPictureBox.TabStop = false;
             // 
             // metroTabPage4
             // 
@@ -984,6 +1459,44 @@ namespace POP3
             this.modApartamentDataGrid.TabIndex = 5;
             this.modApartamentDataGrid.Visible = false;
             // 
+            // Bedrooms
+            // 
+            this.Bedrooms.HeaderText = "Bedrooms";
+            this.Bedrooms.Name = "Bedrooms";
+            this.Bedrooms.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Bedrooms.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Bedrooms.ToolTipText = "Number of bedrooms...";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Column2";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Column3";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Column4";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Column5";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Column6";
+            this.Column6.Name = "Column6";
+            // 
             // modHouseDataGrid
             // 
             this.modHouseDataGrid.AllowUserToAddRows = false;
@@ -1041,6 +1554,17 @@ namespace POP3
             this.metroLabel21.Size = new System.Drawing.Size(133, 19);
             this.metroLabel21.TabIndex = 3;
             this.metroLabel21.Text = "Select field to modify";
+            // 
+            // modificationsComboBox
+            // 
+            this.modificationsComboBox.FormattingEnabled = true;
+            this.modificationsComboBox.ItemHeight = 23;
+            this.modificationsComboBox.Location = new System.Drawing.Point(193, 15);
+            this.modificationsComboBox.Name = "modificationsComboBox";
+            this.modificationsComboBox.Size = new System.Drawing.Size(185, 29);
+            this.modificationsComboBox.TabIndex = 2;
+            this.modificationsComboBox.UseSelectable = true;
+            this.modificationsComboBox.SelectionChangeCommitted += new System.EventHandler(this.modificationComboBox_SelectionChangeCommitted);
             // 
             // modificationsGrid
             // 
@@ -1148,530 +1672,6 @@ namespace POP3
             this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.UseSelectable = true;
             // 
-            // floorsTextBox
-            // 
-            this.floorsTextBox.Lines = new string[0];
-            this.floorsTextBox.Location = new System.Drawing.Point(164, 423);
-            this.floorsTextBox.MaxLength = 32767;
-            this.floorsTextBox.Name = "floorsTextBox";
-            this.floorsTextBox.PasswordChar = '\0';
-            this.floorsTextBox.PromptText = "The number of floors...";
-            this.floorsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.floorsTextBox.SelectedText = "";
-            this.floorsTextBox.Size = new System.Drawing.Size(215, 23);
-            this.floorsTextBox.TabIndex = 275;
-            this.floorsTextBox.UseSelectable = true;
-            this.floorsTextBox.Visible = false;
-            this.floorsTextBox.TextChanged += new System.EventHandler(this.floorsTextBox_TextChanged);
-            // 
-            // apartamentNumber
-            // 
-            this.apartamentNumber.Lines = new string[0];
-            this.apartamentNumber.Location = new System.Drawing.Point(406, 115);
-            this.apartamentNumber.MaxLength = 32767;
-            this.apartamentNumber.Name = "apartamentNumber";
-            this.apartamentNumber.PasswordChar = '\0';
-            this.apartamentNumber.PromptText = "The Apt. number...";
-            this.apartamentNumber.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.apartamentNumber.SelectedText = "";
-            this.apartamentNumber.Size = new System.Drawing.Size(111, 23);
-            this.apartamentNumber.TabIndex = 270;
-            this.apartamentNumber.UseSelectable = true;
-            this.apartamentNumber.Visible = false;
-            this.apartamentNumber.TextChanged += new System.EventHandler(this.apartamentNumber_TextChanged);
-            // 
-            // garageComboBox
-            // 
-            this.garageComboBox.DropDownHeight = 100;
-            this.garageComboBox.FormattingEnabled = true;
-            this.garageComboBox.IntegralHeight = false;
-            this.garageComboBox.ItemHeight = 23;
-            this.garageComboBox.Location = new System.Drawing.Point(164, 312);
-            this.garageComboBox.Name = "garageComboBox";
-            this.garageComboBox.PromptText = "Select number of garages";
-            this.garageComboBox.Size = new System.Drawing.Size(215, 29);
-            this.garageComboBox.TabIndex = 269;
-            this.garageComboBox.UseSelectable = true;
-            // 
-            // conditionComboBox
-            // 
-            this.conditionComboBox.DropDownHeight = 100;
-            this.conditionComboBox.FormattingEnabled = true;
-            this.conditionComboBox.IntegralHeight = false;
-            this.conditionComboBox.ItemHeight = 23;
-            this.conditionComboBox.Location = new System.Drawing.Point(164, 347);
-            this.conditionComboBox.Name = "conditionComboBox";
-            this.conditionComboBox.PromptText = "Select the property condition";
-            this.conditionComboBox.Size = new System.Drawing.Size(215, 29);
-            this.conditionComboBox.TabIndex = 264;
-            this.conditionComboBox.UseSelectable = true;
-            // 
-            // ownerComboBox
-            // 
-            this.ownerComboBox.DropDownHeight = 100;
-            this.ownerComboBox.FormattingEnabled = true;
-            this.ownerComboBox.IntegralHeight = false;
-            this.ownerComboBox.ItemHeight = 23;
-            this.ownerComboBox.Location = new System.Drawing.Point(164, 383);
-            this.ownerComboBox.Name = "ownerComboBox";
-            this.ownerComboBox.PromptText = "Select the owner";
-            this.ownerComboBox.Size = new System.Drawing.Size(215, 29);
-            this.ownerComboBox.TabIndex = 11;
-            this.ownerComboBox.UseSelectable = true;
-            // 
-            // bathroomComboBox
-            // 
-            this.bathroomComboBox.DropDownHeight = 100;
-            this.bathroomComboBox.FormattingEnabled = true;
-            this.bathroomComboBox.IntegralHeight = false;
-            this.bathroomComboBox.ItemHeight = 23;
-            this.bathroomComboBox.Location = new System.Drawing.Point(164, 277);
-            this.bathroomComboBox.Name = "bathroomComboBox";
-            this.bathroomComboBox.PromptText = "Select number of bathrooms";
-            this.bathroomComboBox.Size = new System.Drawing.Size(215, 29);
-            this.bathroomComboBox.TabIndex = 10;
-            this.bathroomComboBox.UseSelectable = true;
-            // 
-            // bedroomComboBox
-            // 
-            this.bedroomComboBox.DropDownHeight = 100;
-            this.bedroomComboBox.FormattingEnabled = true;
-            this.bedroomComboBox.IntegralHeight = false;
-            this.bedroomComboBox.ItemHeight = 23;
-            this.bedroomComboBox.Location = new System.Drawing.Point(164, 245);
-            this.bedroomComboBox.Name = "bedroomComboBox";
-            this.bedroomComboBox.PromptText = "Select number of bedrooms";
-            this.bedroomComboBox.Size = new System.Drawing.Size(215, 29);
-            this.bedroomComboBox.TabIndex = 9;
-            this.bedroomComboBox.UseSelectable = true;
-            // 
-            // neighborhoodComboBox
-            // 
-            this.neighborhoodComboBox.DropDownHeight = 100;
-            this.neighborhoodComboBox.FormattingEnabled = true;
-            this.neighborhoodComboBox.IntegralHeight = false;
-            this.neighborhoodComboBox.ItemHeight = 23;
-            this.neighborhoodComboBox.Location = new System.Drawing.Point(164, 143);
-            this.neighborhoodComboBox.Name = "neighborhoodComboBox";
-            this.neighborhoodComboBox.PromptText = "Select the neighborhood";
-            this.neighborhoodComboBox.Size = new System.Drawing.Size(215, 29);
-            this.neighborhoodComboBox.TabIndex = 5;
-            this.neighborhoodComboBox.UseSelectable = true;
-            // 
-            // propertyTypeComboBox
-            // 
-            this.propertyTypeComboBox.DropDownHeight = 100;
-            this.propertyTypeComboBox.FontSize = MetroFramework.MetroComboBoxSize.Small;
-            this.propertyTypeComboBox.FormattingEnabled = true;
-            this.propertyTypeComboBox.IntegralHeight = false;
-            this.propertyTypeComboBox.ItemHeight = 19;
-            this.propertyTypeComboBox.Location = new System.Drawing.Point(164, 19);
-            this.propertyTypeComboBox.Name = "propertyTypeComboBox";
-            this.propertyTypeComboBox.PromptText = "Select the type of property";
-            this.propertyTypeComboBox.Size = new System.Drawing.Size(215, 25);
-            this.propertyTypeComboBox.TabIndex = 1;
-            this.propertyTypeComboBox.UseSelectable = true;
-            this.propertyTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.propertyTypeComboBox_SelectionChangeCommitted);
-            this.propertyTypeComboBox.SelectionChangeCommitted += new System.EventHandler(this.propertyTypeComboBox_SelectionChangeCommitted);
-            // 
-            // builtYearComboBox
-            // 
-            this.builtYearComboBox.DropDownHeight = 100;
-            this.builtYearComboBox.FormattingEnabled = true;
-            this.builtYearComboBox.IntegralHeight = false;
-            this.builtYearComboBox.ItemHeight = 23;
-            this.builtYearComboBox.Location = new System.Drawing.Point(164, 181);
-            this.builtYearComboBox.Name = "builtYearComboBox";
-            this.builtYearComboBox.PromptText = "Select the year of built";
-            this.builtYearComboBox.Size = new System.Drawing.Size(215, 29);
-            this.builtYearComboBox.TabIndex = 7;
-            this.builtYearComboBox.UseSelectable = true;
-            // 
-            // squareMeterTextBox
-            // 
-            this.squareMeterTextBox.Lines = new string[0];
-            this.squareMeterTextBox.Location = new System.Drawing.Point(164, 216);
-            this.squareMeterTextBox.MaxLength = 32767;
-            this.squareMeterTextBox.Name = "squareMeterTextBox";
-            this.squareMeterTextBox.PasswordChar = '\0';
-            this.squareMeterTextBox.PromptText = "The square meters...";
-            this.squareMeterTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.squareMeterTextBox.SelectedText = "";
-            this.squareMeterTextBox.Size = new System.Drawing.Size(215, 23);
-            this.squareMeterTextBox.TabIndex = 8;
-            this.squareMeterTextBox.UseSelectable = true;
-            this.squareMeterTextBox.TextChanged += new System.EventHandler(this.squareMeterTextBox_TextChanged);
-            // 
-            // doorNumberTextBox
-            // 
-            this.doorNumberTextBox.Lines = new string[0];
-            this.doorNumberTextBox.Location = new System.Drawing.Point(164, 114);
-            this.doorNumberTextBox.MaxLength = 32767;
-            this.doorNumberTextBox.Name = "doorNumberTextBox";
-            this.doorNumberTextBox.PasswordChar = '\0';
-            this.doorNumberTextBox.PromptText = "The door number...";
-            this.doorNumberTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.doorNumberTextBox.SelectedText = "";
-            this.doorNumberTextBox.Size = new System.Drawing.Size(215, 23);
-            this.doorNumberTextBox.TabIndex = 4;
-            this.doorNumberTextBox.UseSelectable = true;
-            this.doorNumberTextBox.TextChanged += new System.EventHandler(this.doorNumberTextBox_TextChanged);
-            // 
-            // sideStreetTextBox
-            // 
-            this.sideStreetTextBox.Lines = new string[0];
-            this.sideStreetTextBox.Location = new System.Drawing.Point(164, 84);
-            this.sideStreetTextBox.MaxLength = 32767;
-            this.sideStreetTextBox.Name = "sideStreetTextBox";
-            this.sideStreetTextBox.PasswordChar = '\0';
-            this.sideStreetTextBox.PromptText = "The name of the street...";
-            this.sideStreetTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.sideStreetTextBox.SelectedText = "";
-            this.sideStreetTextBox.Size = new System.Drawing.Size(215, 23);
-            this.sideStreetTextBox.TabIndex = 3;
-            this.sideStreetTextBox.UseSelectable = true;
-            this.sideStreetTextBox.TextChanged += new System.EventHandler(this.sideStreetTextBox_TextChanged);
-            // 
-            // mainStreetTextBox
-            // 
-            this.mainStreetTextBox.Lines = new string[0];
-            this.mainStreetTextBox.Location = new System.Drawing.Point(164, 54);
-            this.mainStreetTextBox.MaxLength = 32767;
-            this.mainStreetTextBox.Name = "mainStreetTextBox";
-            this.mainStreetTextBox.PasswordChar = '\0';
-            this.mainStreetTextBox.PromptText = "The name of the street...";
-            this.mainStreetTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.mainStreetTextBox.SelectedText = "";
-            this.mainStreetTextBox.Size = new System.Drawing.Size(215, 23);
-            this.mainStreetTextBox.TabIndex = 262;
-            this.mainStreetTextBox.UseSelectable = true;
-            this.mainStreetTextBox.TextChanged += new System.EventHandler(this.mainStreetTextBox_TextChanged);
-            // 
-            // propertyPictureBox
-            // 
-            this.propertyPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("propertyPictureBox.InitialImage")));
-            this.propertyPictureBox.Location = new System.Drawing.Point(572, 19);
-            this.propertyPictureBox.Name = "propertyPictureBox";
-            this.propertyPictureBox.Size = new System.Drawing.Size(372, 294);
-            this.propertyPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.propertyPictureBox.TabIndex = 25;
-            this.propertyPictureBox.TabStop = false;
-            // 
-            // locCityComboBox
-            // 
-            this.locCityComboBox.FormattingEnabled = true;
-            this.locCityComboBox.ItemHeight = 23;
-            this.locCityComboBox.Location = new System.Drawing.Point(211, 272);
-            this.locCityComboBox.Name = "locCityComboBox";
-            this.locCityComboBox.Size = new System.Drawing.Size(179, 29);
-            this.locCityComboBox.TabIndex = 7;
-            this.locCityComboBox.UseSelectable = true;
-            // 
-            // locStateComboBox
-            // 
-            this.locStateComboBox.FormattingEnabled = true;
-            this.locStateComboBox.ItemHeight = 23;
-            this.locStateComboBox.Location = new System.Drawing.Point(588, 117);
-            this.locStateComboBox.Name = "locStateComboBox";
-            this.locStateComboBox.Size = new System.Drawing.Size(179, 29);
-            this.locStateComboBox.TabIndex = 6;
-            this.locStateComboBox.UseSelectable = true;
-            // 
-            // locCountryComboBox
-            // 
-            this.locCountryComboBox.AutoCompleteCustomSource.AddRange(new string[] {
-            "Uruguay",
-            "Uganda",
-            "Universal",
-            "Unagui",
-            "Nicaragua"});
-            this.locCountryComboBox.DropDownHeight = 110;
-            this.locCountryComboBox.FormattingEnabled = true;
-            this.locCountryComboBox.IntegralHeight = false;
-            this.locCountryComboBox.ItemHeight = 23;
-            this.locCountryComboBox.Location = new System.Drawing.Point(211, 117);
-            this.locCountryComboBox.Name = "locCountryComboBox";
-            this.locCountryComboBox.Size = new System.Drawing.Size(179, 29);
-            this.locCountryComboBox.TabIndex = 5;
-            this.locCountryComboBox.UseSelectable = true;
-            // 
-            // locNeighborhoodTextBox
-            // 
-            this.locNeighborhoodTextBox.Lines = new string[0];
-            this.locNeighborhoodTextBox.Location = new System.Drawing.Point(588, 277);
-            this.locNeighborhoodTextBox.MaxLength = 32767;
-            this.locNeighborhoodTextBox.Name = "locNeighborhoodTextBox";
-            this.locNeighborhoodTextBox.PasswordChar = '\0';
-            this.locNeighborhoodTextBox.PromptText = "Input neighborhood name...";
-            this.locNeighborhoodTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.locNeighborhoodTextBox.SelectedText = "";
-            this.locNeighborhoodTextBox.Size = new System.Drawing.Size(179, 23);
-            this.locNeighborhoodTextBox.TabIndex = 12;
-            this.locNeighborhoodTextBox.UseSelectable = true;
-            this.locNeighborhoodTextBox.TextChanged += new System.EventHandler(this.locNeighborhoodTextBox_TextChanged);
-            // 
-            // locCityTextBox
-            // 
-            this.locCityTextBox.Lines = new string[0];
-            this.locCityTextBox.Location = new System.Drawing.Point(211, 325);
-            this.locCityTextBox.MaxLength = 32767;
-            this.locCityTextBox.Name = "locCityTextBox";
-            this.locCityTextBox.PasswordChar = '\0';
-            this.locCityTextBox.PromptText = "Input city name...";
-            this.locCityTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.locCityTextBox.SelectedText = "";
-            this.locCityTextBox.Size = new System.Drawing.Size(179, 23);
-            this.locCityTextBox.TabIndex = 11;
-            this.locCityTextBox.UseSelectable = true;
-            this.locCityTextBox.Visible = false;
-            this.locCityTextBox.TextChanged += new System.EventHandler(this.locCityTextBox_TextChanged);
-            // 
-            // locStateTextBox
-            // 
-            this.locStateTextBox.Lines = new string[0];
-            this.locStateTextBox.Location = new System.Drawing.Point(588, 162);
-            this.locStateTextBox.MaxLength = 32767;
-            this.locStateTextBox.Name = "locStateTextBox";
-            this.locStateTextBox.PasswordChar = '\0';
-            this.locStateTextBox.PromptText = "Input state name...";
-            this.locStateTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.locStateTextBox.SelectedText = "";
-            this.locStateTextBox.Size = new System.Drawing.Size(179, 23);
-            this.locStateTextBox.TabIndex = 10;
-            this.locStateTextBox.UseSelectable = true;
-            this.locStateTextBox.Visible = false;
-            this.locStateTextBox.TextChanged += new System.EventHandler(this.locStateTextBox_TextChanged);
-            // 
-            // locCountryTextBox
-            // 
-            this.locCountryTextBox.Lines = new string[0];
-            this.locCountryTextBox.Location = new System.Drawing.Point(211, 162);
-            this.locCountryTextBox.MaxLength = 32767;
-            this.locCountryTextBox.Name = "locCountryTextBox";
-            this.locCountryTextBox.PasswordChar = '\0';
-            this.locCountryTextBox.PromptText = "Input country name...";
-            this.locCountryTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.locCountryTextBox.SelectedText = "";
-            this.locCountryTextBox.Size = new System.Drawing.Size(179, 23);
-            this.locCountryTextBox.TabIndex = 9;
-            this.locCountryTextBox.UseSelectable = true;
-            this.locCountryTextBox.Visible = false;
-            this.locCountryTextBox.TextChanged += new System.EventHandler(this.locCountryTextBox_TextChanged);
-            // 
-            // clientNeighborhoodComboBox
-            // 
-            this.clientNeighborhoodComboBox.FormattingEnabled = true;
-            this.clientNeighborhoodComboBox.ItemHeight = 23;
-            this.clientNeighborhoodComboBox.Location = new System.Drawing.Point(288, 92);
-            this.clientNeighborhoodComboBox.Name = "clientNeighborhoodComboBox";
-            this.clientNeighborhoodComboBox.Size = new System.Drawing.Size(184, 29);
-            this.clientNeighborhoodComboBox.TabIndex = 17;
-            this.clientNeighborhoodComboBox.UseSelectable = true;
-            // 
-            // clientEmailTextBox
-            // 
-            this.clientEmailTextBox.Lines = new string[0];
-            this.clientEmailTextBox.Location = new System.Drawing.Point(288, 226);
-            this.clientEmailTextBox.MaxLength = 32767;
-            this.clientEmailTextBox.Name = "clientEmailTextBox";
-            this.clientEmailTextBox.PasswordChar = '\0';
-            this.clientEmailTextBox.PromptText = "The client email...";
-            this.clientEmailTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.clientEmailTextBox.SelectedText = "";
-            this.clientEmailTextBox.Size = new System.Drawing.Size(184, 23);
-            this.clientEmailTextBox.TabIndex = 15;
-            this.clientEmailTextBox.UseSelectable = true;
-            // 
-            // clientPhoneTextBox
-            // 
-            this.clientPhoneTextBox.Lines = new string[0];
-            this.clientPhoneTextBox.Location = new System.Drawing.Point(287, 185);
-            this.clientPhoneTextBox.MaxLength = 32767;
-            this.clientPhoneTextBox.Name = "clientPhoneTextBox";
-            this.clientPhoneTextBox.PasswordChar = '\0';
-            this.clientPhoneTextBox.PromptText = "The client phone ...";
-            this.clientPhoneTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.clientPhoneTextBox.SelectedText = "";
-            this.clientPhoneTextBox.Size = new System.Drawing.Size(184, 23);
-            this.clientPhoneTextBox.TabIndex = 14;
-            this.clientPhoneTextBox.UseSelectable = true;
-            this.clientPhoneTextBox.TextChanged += new System.EventHandler(this.clientPhoneTextBox_TextChanged);
-            // 
-            // clientIdTextBox
-            // 
-            this.clientIdTextBox.Lines = new string[0];
-            this.clientIdTextBox.Location = new System.Drawing.Point(287, 144);
-            this.clientIdTextBox.MaxLength = 32767;
-            this.clientIdTextBox.Name = "clientIdTextBox";
-            this.clientIdTextBox.PasswordChar = '\0';
-            this.clientIdTextBox.PromptText = "The client id...";
-            this.clientIdTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.clientIdTextBox.SelectedText = "";
-            this.clientIdTextBox.Size = new System.Drawing.Size(184, 23);
-            this.clientIdTextBox.TabIndex = 13;
-            this.clientIdTextBox.UseSelectable = true;
-            this.clientIdTextBox.TextChanged += new System.EventHandler(this.clientIdTextBox_TextChanged);
-            // 
-            // clientNameTextBox
-            // 
-            this.clientNameTextBox.Lines = new string[0];
-            this.clientNameTextBox.Location = new System.Drawing.Point(288, 52);
-            this.clientNameTextBox.MaxLength = 32767;
-            this.clientNameTextBox.Name = "clientNameTextBox";
-            this.clientNameTextBox.PasswordChar = '\0';
-            this.clientNameTextBox.PromptText = "The client name...";
-            this.clientNameTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.clientNameTextBox.SelectedText = "";
-            this.clientNameTextBox.Size = new System.Drawing.Size(184, 23);
-            this.clientNameTextBox.TabIndex = 4;
-            this.clientNameTextBox.UseSelectable = true;
-            this.clientNameTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.clientNameTextBox_KeyUp);
-            // 
-            // clientPictureBox
-            // 
-            this.clientPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("clientPictureBox.InitialImage")));
-            this.clientPictureBox.Location = new System.Drawing.Point(509, 40);
-            this.clientPictureBox.Name = "clientPictureBox";
-            this.clientPictureBox.Size = new System.Drawing.Size(208, 225);
-            this.clientPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.clientPictureBox.TabIndex = 2;
-            this.clientPictureBox.TabStop = false;
-            // 
-            // modificationsComboBox
-            // 
-            this.modificationsComboBox.FormattingEnabled = true;
-            this.modificationsComboBox.ItemHeight = 23;
-            this.modificationsComboBox.Location = new System.Drawing.Point(193, 15);
-            this.modificationsComboBox.Name = "modificationsComboBox";
-            this.modificationsComboBox.Size = new System.Drawing.Size(185, 29);
-            this.modificationsComboBox.TabIndex = 2;
-            this.modificationsComboBox.UseSelectable = true;
-            this.modificationsComboBox.SelectionChangeCommitted += new System.EventHandler(this.modificationComboBox_SelectionChangeCommitted);
-            // 
-            // galleryMaxPriceComboBox
-            // 
-            this.galleryMaxPriceComboBox.DropDownHeight = 60;
-            this.galleryMaxPriceComboBox.FormattingEnabled = true;
-            this.galleryMaxPriceComboBox.IntegralHeight = false;
-            this.galleryMaxPriceComboBox.ItemHeight = 23;
-            this.galleryMaxPriceComboBox.Location = new System.Drawing.Point(114, 299);
-            this.galleryMaxPriceComboBox.Name = "galleryMaxPriceComboBox";
-            this.galleryMaxPriceComboBox.PromptText = "Value...";
-            this.galleryMaxPriceComboBox.Size = new System.Drawing.Size(99, 29);
-            this.galleryMaxPriceComboBox.TabIndex = 17;
-            this.galleryMaxPriceComboBox.UseSelectable = true;
-            this.galleryMaxPriceComboBox.Visible = false;
-            // 
-            // galleryMinPriceComboBox
-            // 
-            this.galleryMinPriceComboBox.DropDownHeight = 60;
-            this.galleryMinPriceComboBox.FormattingEnabled = true;
-            this.galleryMinPriceComboBox.IntegralHeight = false;
-            this.galleryMinPriceComboBox.ItemHeight = 23;
-            this.galleryMinPriceComboBox.Location = new System.Drawing.Point(114, 264);
-            this.galleryMinPriceComboBox.Name = "galleryMinPriceComboBox";
-            this.galleryMinPriceComboBox.PromptText = "Value...";
-            this.galleryMinPriceComboBox.Size = new System.Drawing.Size(99, 29);
-            this.galleryMinPriceComboBox.TabIndex = 16;
-            this.galleryMinPriceComboBox.UseSelectable = true;
-            this.galleryMinPriceComboBox.Visible = false;
-            // 
-            // galleryCountryComboBox
-            // 
-            this.galleryCountryComboBox.DropDownHeight = 60;
-            this.galleryCountryComboBox.FormattingEnabled = true;
-            this.galleryCountryComboBox.IntegralHeight = false;
-            this.galleryCountryComboBox.ItemHeight = 23;
-            this.galleryCountryComboBox.Location = new System.Drawing.Point(114, 194);
-            this.galleryCountryComboBox.Name = "galleryCountryComboBox";
-            this.galleryCountryComboBox.Size = new System.Drawing.Size(99, 29);
-            this.galleryCountryComboBox.TabIndex = 14;
-            this.galleryCountryComboBox.UseSelectable = true;
-            this.galleryCountryComboBox.Visible = false;
-            // 
-            // galleryNeighborhoodComboBox
-            // 
-            this.galleryNeighborhoodComboBox.DropDownHeight = 60;
-            this.galleryNeighborhoodComboBox.FormattingEnabled = true;
-            this.galleryNeighborhoodComboBox.IntegralHeight = false;
-            this.galleryNeighborhoodComboBox.ItemHeight = 23;
-            this.galleryNeighborhoodComboBox.Location = new System.Drawing.Point(114, 229);
-            this.galleryNeighborhoodComboBox.Name = "galleryNeighborhoodComboBox";
-            this.galleryNeighborhoodComboBox.Size = new System.Drawing.Size(99, 29);
-            this.galleryNeighborhoodComboBox.TabIndex = 12;
-            this.galleryNeighborhoodComboBox.UseSelectable = true;
-            this.galleryNeighborhoodComboBox.Visible = false;
-            // 
-            // galleryDormitoryComboBox
-            // 
-            this.galleryDormitoryComboBox.FormattingEnabled = true;
-            this.galleryDormitoryComboBox.ItemHeight = 23;
-            this.galleryDormitoryComboBox.Location = new System.Drawing.Point(114, 159);
-            this.galleryDormitoryComboBox.Name = "galleryDormitoryComboBox";
-            this.galleryDormitoryComboBox.Size = new System.Drawing.Size(99, 29);
-            this.galleryDormitoryComboBox.TabIndex = 10;
-            this.galleryDormitoryComboBox.UseSelectable = true;
-            this.galleryDormitoryComboBox.Visible = false;
-            // 
-            // galleryGarageComboBox
-            // 
-            this.galleryGarageComboBox.FormattingEnabled = true;
-            this.galleryGarageComboBox.ItemHeight = 23;
-            this.galleryGarageComboBox.Location = new System.Drawing.Point(114, 124);
-            this.galleryGarageComboBox.Name = "galleryGarageComboBox";
-            this.galleryGarageComboBox.Size = new System.Drawing.Size(99, 29);
-            this.galleryGarageComboBox.TabIndex = 8;
-            this.galleryGarageComboBox.UseSelectable = true;
-            this.galleryGarageComboBox.Visible = false;
-            // 
-            // galleryCustomPictureBox
-            // 
-            this.galleryCustomPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("galleryCustomPictureBox.InitialImage")));
-            this.galleryCustomPictureBox.Location = new System.Drawing.Point(371, 16);
-            this.galleryCustomPictureBox.Name = "galleryCustomPictureBox";
-            this.galleryCustomPictureBox.Size = new System.Drawing.Size(503, 392);
-            this.galleryCustomPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.galleryCustomPictureBox.TabIndex = 2;
-            this.galleryCustomPictureBox.TabStop = false;
-            // 
-            // Bedrooms
-            // 
-            this.Bedrooms.HeaderText = "Bedrooms";
-            this.Bedrooms.Name = "Bedrooms";
-            this.Bedrooms.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Bedrooms.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Bedrooms.ToolTipText = "Number of bedrooms...";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Column3";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Column4";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Column5";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Column6";
-            this.Column6.Name = "Column6";
-            // 
             // MainWindow
             // 
             this.AllowDrop = true;
@@ -1686,14 +1686,17 @@ namespace POP3
             this.Text = "POP3";
             this.metroTabPage3.ResumeLayout(false);
             this.metroTabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.galleryCustomPictureBox)).EndInit();
             this.metroTabPage2.ResumeLayout(false);
             this.metroTabControl2.ResumeLayout(false);
             this.metroTabPage6.ResumeLayout(false);
             this.metroTabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.propertyPictureBox)).EndInit();
             this.locationTab.ResumeLayout(false);
             this.locationTab.PerformLayout();
             this.metroTabPage7.ResumeLayout(false);
             this.metroTabPage7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientPictureBox)).EndInit();
             this.metroTabPage4.ResumeLayout(false);
             this.metroTabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.modApartamentDataGrid)).EndInit();
@@ -1702,9 +1705,6 @@ namespace POP3
             this.metroTabPage1.ResumeLayout(false);
             this.metroTabPage1.PerformLayout();
             this.metroTabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.propertyPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.galleryCustomPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }

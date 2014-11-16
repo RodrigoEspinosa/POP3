@@ -301,40 +301,7 @@ namespace POP3
         /// <param name="e"></param>
         private void clientFinishButton_Click(object sender, EventArgs e)
         {
-            if (clientNameTextBox.Text != "" &&
-                clientNeighborhoodComboBox.SelectedIndex != -1 &&
-                clientIdTextBox.Text != "" &&
-                clientPhoneTextBox.Text != "" &&
-                Verify.Email(clientEmailTextBox))
-            {
-                new Client(clientNameTextBox.Text,
-                                          clientEmailTextBox.Text,
-                                          clientPhoneTextBox.Text,
-                                          clientIdTextBox.Text,
-                                          clientSellHisPropertyCheck.Checked,
-                                          clientRentHisPropertyCheck.Checked,
-                                          clientRentPropertyCheck.Checked,
-                                          clientBuyPropertyCheck.Checked,
-                                          clientPictureBox.Image);
-
-                MessageBox.Show("Client successfuly created! ");
-                //Client.Save();
-                RefreshComboBoxes();
-                clientNameTextBox.Refresh();
-                clientIdTextBox.Refresh();
-                clientPhoneTextBox.Refresh();
-                clientEmailTextBox.Refresh();
-                clientPictureBox.Refresh();
-                clientBuyPropertyCheck.Checked = false;
-                clientRentPropertyCheck.Checked = false;
-                clientSellHisPropertyCheck.Checked = false;
-                clientRentHisPropertyCheck.Checked = false;
-                
-            }
-            else
-            {
-                MessageBox.Show("Client not created.\nPlease check input fields.");   
-            }
+            CreateClients();
         }
 
         /// <summary>
@@ -501,8 +468,6 @@ namespace POP3
             Verify.String(mainStreetTextBox);
         }
 
-
-
         /// <summary>
         /// Creates a Apartament or a House
         /// depending on the case.
@@ -511,93 +476,8 @@ namespace POP3
         /// <param name="e"></param>
         private void createPropertyFinishButton_Click(object sender, EventArgs e)
         {
-            bool dataFilled = (propertyTypeComboBox.SelectedIndex != -1 &&
-                             mainStreetTextBox.Text != "" &&
-                             sideStreetTextBox.Text != "" &&
-                             doorNumberTextBox.Text != "" &&
-                             neighborhoodComboBox.SelectedIndex != -1 &&
-                             builtYearComboBox.SelectedIndex != -1 &&
-                             squareMeterTextBox.Text != "" &&
-                             bedroomComboBox.SelectedIndex != -1 &&
-                             bathroomComboBox.SelectedIndex != -1 &&
-                             garageComboBox.SelectedIndex != -1 &&
-                             conditionComboBox.SelectedIndex != -1 &&
-                             ownerComboBox.SelectedIndex != -1);
-
-
-            try
-            {
-                if (propertyTypeComboBox.SelectedItem.ToString() == "Apartament")
-                {
-                    bool apartamentDataFilled = false;
-                    apartamentDataFilled = (dataFilled &&
-                                       floorsTextBox.Text != "");
-                    if (apartamentDataFilled)
-                    {
-                        new Apartament(Int32.Parse(bedroomComboBox.SelectedItem.ToString()),
-                                               Int32.Parse(bathroomComboBox.SelectedItem.ToString()),
-                                               Int32.Parse(builtYearComboBox.SelectedItem.ToString()),
-                                               Int32.Parse(squareMeterTextBox.Text),
-                                               mainStreetTextBox.Text,
-                                               sideStreetTextBox.Text,
-                                               doorNumberTextBox.Text,
-                                               forRentCheckBox.Checked,
-                                               forSaleCheckBox.Checked,
-                                               Sort.GetNeighborhoodByName(neighborhoodComboBox, Model<Neighborhood>.getInstances()),
-                                               Int32.Parse(floorsTextBox.Text),
-                                               Int32.Parse(apartamentNumber.Text));
-
-                    }
-                    MessageBox.Show("Apartament succesifully created!");
-                    Apartament.Save();
-                }
-                if (propertyTypeComboBox.SelectedItem.ToString() == "House")
-                {
-                    bool houseDataFilled = false;
-                    houseDataFilled = (dataFilled &&
-                                       gardenCheckBox.Checked);
-                    if (houseDataFilled)
-                    {
-                        new House(Int32.Parse(bedroomComboBox.SelectedItem.ToString()),
-                                               Int32.Parse(bathroomComboBox.SelectedItem.ToString()),
-                                               Int32.Parse(builtYearComboBox.SelectedItem.ToString()),
-                                               Int32.Parse(squareMeterTextBox.Text),
-                                               mainStreetTextBox.Text,
-                                               sideStreetTextBox.Text,
-                                               doorNumberTextBox.Text,
-                                               forRentCheckBox.Checked,
-                                               forSaleCheckBox.Checked,
-                                               Sort.GetNeighborhoodByName(neighborhoodComboBox, Model<Neighborhood>.getInstances()),
-                                               galleryGarageCheckBox.Checked);
-                    }
-                    MessageBox.Show("House succesifully created!");
-                    House.Save();
-                }
-                mainStreetTextBox.Refresh();
-                sideStreetTextBox.Refresh();
-                doorNumberTextBox.Refresh();
-                apartamentNumber.Refresh();
-                neighborhoodComboBox.Refresh();
-                builtYearComboBox.Refresh();
-                squareMeterTextBox.Refresh();
-                bedroomComboBox.Refresh();
-                bathroomComboBox.Refresh();
-                garageComboBox.Refresh();
-                conditionComboBox.Refresh();
-                ownerComboBox.Refresh();
-                floorsTextBox.Refresh();
-                forSaleCheckBox.Checked = false;
-                forRentCheckBox.Checked = false;
-                gardenCheckBox.Checked  = false;
-            }
-            catch (NullReferenceException)
-            {
-                MessageBox.Show("Please check input fields...");
-                return;        
-            }
+            CreateProperty();
         }
-
-
 
         private void countryToogle_Scroll(object sender, ScrollEventArgs e)
         {
@@ -708,9 +588,131 @@ namespace POP3
         {
             LocationAux.ShowHideLocationControls(locStateComboBox, locStateTextBox, stateToogle);
         }
-        
+
+        private void CreateProperty()
+        {
+            bool dataFilled = (propertyTypeComboBox.SelectedIndex != -1 &&
+                             mainStreetTextBox.Text != "" &&
+                             sideStreetTextBox.Text != "" &&
+                             doorNumberTextBox.Text != "" &&
+                             neighborhoodComboBox.SelectedIndex != -1 &&
+                             builtYearComboBox.SelectedIndex != -1 &&
+                             squareMeterTextBox.Text != "" &&
+                             bedroomComboBox.SelectedIndex != -1 &&
+                             bathroomComboBox.SelectedIndex != -1 &&
+                             garageComboBox.SelectedIndex != -1 &&
+                             conditionComboBox.SelectedIndex != -1 &&
+                             ownerComboBox.SelectedIndex != -1);
 
 
-       
+            try
+            {
+                if (propertyTypeComboBox.SelectedItem.ToString() == "Apartament")
+                {
+                    bool apartamentDataFilled = false;
+                    apartamentDataFilled = (dataFilled &&
+                                       floorsTextBox.Text != "");
+                    if (apartamentDataFilled)
+                    {
+                        new Apartament(Int32.Parse(bedroomComboBox.SelectedItem.ToString()),
+                                               Int32.Parse(bathroomComboBox.SelectedItem.ToString()),
+                                               Int32.Parse(builtYearComboBox.SelectedItem.ToString()),
+                                               Int32.Parse(squareMeterTextBox.Text),
+                                               mainStreetTextBox.Text,
+                                               sideStreetTextBox.Text,
+                                               doorNumberTextBox.Text,
+                                               forRentCheckBox.Checked,
+                                               forSaleCheckBox.Checked,
+                                               Sort.GetNeighborhoodByName(neighborhoodComboBox, Model<Neighborhood>.getInstances()),
+                                               Int32.Parse(floorsTextBox.Text),
+                                               Int32.Parse(apartamentNumber.Text));
+
+                    }
+                    MessageBox.Show("Apartament succesifully created!");
+                    Apartament.Save();
+                }
+                if (propertyTypeComboBox.SelectedItem.ToString() == "House")
+                {
+                    bool houseDataFilled = false;
+                    houseDataFilled = (dataFilled &&
+                                       gardenCheckBox.Checked);
+                    if (houseDataFilled)
+                    {
+                        new House(Int32.Parse(bedroomComboBox.SelectedItem.ToString()),
+                                               Int32.Parse(bathroomComboBox.SelectedItem.ToString()),
+                                               Int32.Parse(builtYearComboBox.SelectedItem.ToString()),
+                                               Int32.Parse(squareMeterTextBox.Text),
+                                               mainStreetTextBox.Text,
+                                               sideStreetTextBox.Text,
+                                               doorNumberTextBox.Text,
+                                               forRentCheckBox.Checked,
+                                               forSaleCheckBox.Checked,
+                                               Sort.GetNeighborhoodByName(neighborhoodComboBox, Model<Neighborhood>.getInstances()),
+                                               galleryGarageCheckBox.Checked);
+                    }
+                    MessageBox.Show("House succesifully created!");
+                    House.Save();
+                }
+                mainStreetTextBox.Refresh();
+                sideStreetTextBox.Refresh();
+                doorNumberTextBox.Refresh();
+                apartamentNumber.Refresh();
+                neighborhoodComboBox.Refresh();
+                builtYearComboBox.Refresh();
+                squareMeterTextBox.Refresh();
+                bedroomComboBox.Refresh();
+                bathroomComboBox.Refresh();
+                garageComboBox.Refresh();
+                conditionComboBox.Refresh();
+                ownerComboBox.Refresh();
+                floorsTextBox.Refresh();
+                forSaleCheckBox.Checked = false;
+                forRentCheckBox.Checked = false;
+                gardenCheckBox.Checked = false;
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Please check input fields...");
+                return;
+            }
+        }
+
+        private void CreateClients()
+        {
+            if (clientNameTextBox.Text != "" &&
+                clientNeighborhoodComboBox.SelectedIndex != -1 &&
+                clientIdTextBox.Text != "" &&
+                clientPhoneTextBox.Text != "" &&
+                Verify.Email(clientEmailTextBox))
+            {
+                new Client(clientNameTextBox.Text,
+                                          clientEmailTextBox.Text,
+                                          clientPhoneTextBox.Text,
+                                          clientIdTextBox.Text,
+                                          clientSellHisPropertyCheck.Checked,
+                                          clientRentHisPropertyCheck.Checked,
+                                          clientRentPropertyCheck.Checked,
+                                          clientBuyPropertyCheck.Checked,
+                                          clientPictureBox.Image);
+
+                MessageBox.Show("Client successfuly created! ");
+                //Client.Save();
+                RefreshComboBoxes();
+                clientNameTextBox.Refresh();
+                clientIdTextBox.Refresh();
+                clientPhoneTextBox.Refresh();
+                clientEmailTextBox.Refresh();
+                clientPictureBox.Refresh();
+                clientBuyPropertyCheck.Checked = false;
+                clientRentPropertyCheck.Checked = false;
+                clientSellHisPropertyCheck.Checked = false;
+                clientRentHisPropertyCheck.Checked = false;
+
+            }
+            else
+            {
+                MessageBox.Show("Client not created.\nPlease check input fields.");
+            }
+        }
     }
 }
