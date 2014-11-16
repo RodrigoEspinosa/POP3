@@ -12,6 +12,8 @@ namespace POP3
         protected int builtMeters;
         protected bool forRent;
         protected bool forSale;
+        protected int sellPrice;
+        protected int rentPrice;
         protected IAddress address;
 
         public int Bedrooms
@@ -66,6 +68,18 @@ namespace POP3
             set { address = value; }
         }
 
+        public int SellPrice
+        {
+            get { return this.sellPrice; }
+            set { this.sellPrice = value; }
+        }
+
+        public int RentPrice
+        {
+            get { return this.rentPrice; }
+            set { this.rentPrice = value;}
+        }
+
         public string FullAddress()
         {
             String fullAddress = address.AddressLine1;
@@ -85,16 +99,18 @@ namespace POP3
             return fullAddress;
         }
 
-        public Property(int bedrooms, int bathrooms, int years, int builtMeters, String adress1, String adress2, String number, bool forRent, bool forSale, INeighborhood neighborhood)
+        public Property(int bedrooms, int bathrooms, int years, int builtMeters, String adress1, String adress2, String number, bool forRent, bool forSale,int rentPrice, int SellPrice ,INeighborhood neighborhood)
         {
             this.bedrooms = bedrooms;
             this.bathrooms = bathrooms;
             this.year = years;
             this.builtMeters = builtMeters;
             this.ForRent = forRent;
-            this.ForSale = forSale; 
-            this.address = new Address(adress1, adress2, number);
-            this.address.Neighborhood = neighborhood;
+            this.ForSale = forSale;
+            this.SellPrice = sellPrice;
+            this.RentPrice = rentPrice;
+            this.Address = new Address(adress1, adress2, number);
+            this.Address.Neighborhood = neighborhood;
 
         }
     }

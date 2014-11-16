@@ -613,9 +613,9 @@ namespace POP3
                              bathroomComboBox.SelectedIndex != -1 &&
                              garageComboBox.SelectedIndex != -1 &&
                              conditionComboBox.SelectedIndex != -1 &&
-                             ownerComboBox.SelectedIndex != -1);
-
-
+                             ownerComboBox.SelectedIndex != -1 &&
+                             sellPriceTextBox.Text != "" &&
+                             rentPriceTextBox.Text != "");
             try
             {
                 if (propertyTypeComboBox.SelectedItem.ToString() == "Apartament")
@@ -627,7 +627,7 @@ namespace POP3
 
                     if (apartamentDataFilled)
                     {
-                        new Apartament(Int32.Parse(bedroomComboBox.SelectedItem.ToString()),
+                            new Apartament(Int32.Parse(bedroomComboBox.SelectedItem.ToString()),
                                                Int32.Parse(bathroomComboBox.SelectedItem.ToString()),
                                                Int32.Parse(builtYearComboBox.SelectedItem.ToString()),
                                                Int32.Parse(squareMeterTextBox.Text),
@@ -636,6 +636,8 @@ namespace POP3
                                                doorNumberTextBox.Text,
                                                forRentCheckBox.Checked,
                                                forSaleCheckBox.Checked,
+                                               Int32.Parse(rentPriceTextBox.Text),
+                                               Int32.Parse(sellPriceTextBox.Text),
                                                Sort.GetNeighborhoodByName(neighborhoodComboBox, Model<Neighborhood>.getInstances()),
                                                Int32.Parse(floorsTextBox.Text),
                                                Int32.Parse(apartamentNumber.Text));
@@ -660,6 +662,8 @@ namespace POP3
                                                doorNumberTextBox.Text,
                                                forRentCheckBox.Checked,
                                                forSaleCheckBox.Checked,
+                                               Int32.Parse(rentPriceTextBox.Text),
+                                               Int32.Parse(sellPriceTextBox.Text),
                                                Sort.GetNeighborhoodByName(neighborhoodComboBox, Model<Neighborhood>.getInstances()),
                                                galleryGarageCheckBox.Checked);
                     }
@@ -733,6 +737,16 @@ namespace POP3
             {
                 MessageBox.Show("Client not created.\nPlease check input fields.");
             }
+        }
+
+        private void sellPriceTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Verify.Int(sellPriceTextBox);
+        }
+
+        private void rentPriceTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Verify.Int(rentPriceTextBox);
         }
     }
 }

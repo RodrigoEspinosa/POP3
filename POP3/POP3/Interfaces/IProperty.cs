@@ -49,6 +49,10 @@ namespace POP3
         /// Property sale status.
         /// </summary>
         bool ForSale { get; set; }
+
+        int SellPrice { get; set; }
+
+        int RentPrice { get; set; }
         
 	}
 }
