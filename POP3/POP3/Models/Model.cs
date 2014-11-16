@@ -77,8 +77,6 @@ namespace POP3
 
 			// Write the serialization into the target file
 			System.IO.File.WriteAllText (target, data);
-
-			// TODO: Create seralization specifications
 		}
 
 		public static void Load ()

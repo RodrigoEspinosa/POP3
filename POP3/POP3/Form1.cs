@@ -265,10 +265,9 @@ namespace POP3
                 if (!LocationAux.TextBoxIsEmpty(locNeighborhoodTextBox)) {
                     new Neighborhood(locNeighborhoodTextBox.Text,
                                     new City(city,
-                                    new State(state,
-                                    new Country(country)
+                                    new State(state, new Country(country)
                                     )));
-                    MessageBox.Show("Location successfuly created!");
+                    ValidationSuccess.Show("Location successfuly created!");
                     
                     Neighborhood.Save();
                     City.Save();
@@ -306,7 +305,7 @@ namespace POP3
         /// <param name="e"></param>
         private void modHouseDataGrid_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            MessageBox.Show("The input isn't in the right format...");
+            ValidationError.Show("The input isn't in the right format.");
         }
 
         /// <summary>
@@ -618,15 +617,11 @@ namespace POP3
                                rentPriceTextBox.Text != "");
             try
             {
-                if (propertyTypeComboBox.SelectedItem.ToString() == "Apartament")
-                {
+                if (propertyTypeComboBox.SelectedItem.ToString() == "Apartament") {
                     bool apartamentDataFilled = false;
-                    apartamentDataFilled = (dataFilled &&
-                                            floorsTextBox.Text != "" &&
-                                            apartamentNumber.Text != "");
+                    apartamentDataFilled = (dataFilled && floorsTextBox.Text != "" && apartamentNumber.Text != "");
 
-                    if (apartamentDataFilled)
-                    {
+                    if (apartamentDataFilled) {
                             new Apartament(Int32.Parse(bedroomComboBox.SelectedItem.ToString()),
                                                Int32.Parse(bathroomComboBox.SelectedItem.ToString()),
                                                Int32.Parse(builtYearComboBox.SelectedItem.ToString()),
@@ -642,8 +637,9 @@ namespace POP3
                                                Int32.Parse(floorsTextBox.Text),
                                                Int32.Parse(apartamentNumber.Text));
                             
-                        MessageBox.Show("Apartament succesifully created!");
+                        ValidationSuccess.Show("Apartament succesifully created!");
                         Apartament.Save();
+                        
                         mainStreetTextBox.Refresh();
                         sideStreetTextBox.Refresh();
                         doorNumberTextBox.Refresh();
@@ -663,13 +659,11 @@ namespace POP3
                     }
                 }
                 
-                if (propertyTypeComboBox.SelectedItem.ToString() == "House")
-                {
+                if (propertyTypeComboBox.SelectedItem.ToString() == "House") {
                     bool houseDataFilled = false;
-                    houseDataFilled = (dataFilled &&
-                                       gardenCheckBox.Checked);
-                    if (houseDataFilled)
-                    {
+                    houseDataFilled = (dataFilled && gardenCheckBox.Checked);
+                    
+                    if (houseDataFilled) {
                         new House(Int32.Parse(bedroomComboBox.SelectedItem.ToString()),
                                                Int32.Parse(bathroomComboBox.SelectedItem.ToString()),
                                                Int32.Parse(builtYearComboBox.SelectedItem.ToString()),
@@ -684,7 +678,7 @@ namespace POP3
                                                Sort.GetNeighborhoodByName(neighborhoodComboBox, Model<Neighborhood>.getInstances()),
                                                galleryGarageCheckBox.Checked);
                         
-                        MessageBox.Show("House succesifully created!");
+                        ValidationSuccess.Show("House succesifully created!");
                         House.Save();
 
                         mainStreetTextBox.Refresh();
@@ -704,17 +698,11 @@ namespace POP3
                         forRentCheckBox.Checked = false;
                         gardenCheckBox.Checked = false;
                     }
-
-                }
-                else
-                {
+                } else {
                     ValidationError.Show("Please check input field...");
                 }
-            }
-                    
-            catch (NullReferenceException)
-            {
-                MessageBox.Show("Please check input fields...");
+            } catch (NullReferenceException) {
+                ValidationError.Show("Please check input fields.");
                 return;
             }
 
@@ -728,9 +716,9 @@ namespace POP3
                 clientPhoneTextBox.Text != "" &&
                 Verify.Email(clientEmailTextBox))
             {
-                Console.WriteLine(Directory.GetCurrentDirectory());
-                Console.WriteLine("Images");
-                Console.WriteLine(clientPictureBox.ImageLocation.ToString());
+                // Console.WriteLine(Directory.GetCurrentDirectory());
+                // Console.WriteLine("Images");
+                // Console.WriteLine(clientPictureBox.ImageLocation.ToString());
                 String path = Path.Combine(Directory.GetCurrentDirectory(), "Images", Path.GetFileName(clientPictureBox.ImageLocation));
 
                 Client client = new Client(clientNameTextBox.Text,
@@ -744,9 +732,11 @@ namespace POP3
                                           path);
                 
 
-                MessageBox.Show("Client successfuly created! ");
+                ValidationSuccess.Show("Client successfuly created.");
                 Client.Save();
+                
                 RefreshComboBoxes();
+                
                 clientNameTextBox.Refresh();
                 clientIdTextBox.Refresh();
                 clientPhoneTextBox.Refresh();
@@ -758,10 +748,8 @@ namespace POP3
                 clientSellHisPropertyCheck.Checked = false;
                 clientRentHisPropertyCheck.Checked = false;
 
-            }
-            else
-            {
-                MessageBox.Show("Client not created.\nPlease check input fields.");
+            } else {
+                ValidationError.Show("Client not created.\nPlease check input fields.");
             }
 
         }
