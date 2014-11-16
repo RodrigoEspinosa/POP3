@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace POP3.Models
+namespace POP3
 {
     public class House: Property
     {

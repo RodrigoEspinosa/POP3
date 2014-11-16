@@ -2,7 +2,7 @@
 using System;
 using System.Drawing;
 
-namespace POP3.Models
+namespace POP3
 {
     public abstract class Person<T>: Model<T>, IPerson where T:Person<T>
     {
@@ -44,8 +44,8 @@ namespace POP3.Models
         /// </summary>
         public String Phone
         {
-            get { return this.phone;}
-            set { this.phone = value;}
+            get { return this.phone; }
+            set { this.phone = value; }
         }
 
         public Image ProfilePicture

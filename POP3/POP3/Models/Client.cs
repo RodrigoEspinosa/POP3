@@ -3,9 +3,9 @@ using System;
 using System.Drawing;
 using System.Collections.Generic;
 
-namespace POP3.Models
+namespace POP3
 {
-    public class Client : Person<Client>
+    public class Client : Person<Client>, IClient
     {
         protected bool sellsHisProperty;
         protected bool rentsHisProperty;

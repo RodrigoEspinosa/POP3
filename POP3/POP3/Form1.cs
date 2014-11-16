@@ -256,14 +256,13 @@ namespace POP3
             String country;
             String state;
             String city;
-            try
-            {
+            
+            try {
                 country = LocationAux.GetLocationName(locCountryComboBox, locCountryTextBox);
                 state = LocationAux.GetLocationName(locStateComboBox, locStateTextBox);
                 city = LocationAux.GetLocationName(locCityComboBox, locCityTextBox);
                 
-                if (!LocationAux.TextBoxIsEmpty(locNeighborhoodTextBox))
-                {
+                if (!LocationAux.TextBoxIsEmpty(locNeighborhoodTextBox)) {
                     new Neighborhood(locNeighborhoodTextBox.Text,
                                     new City(city,
                                     new State(state,
@@ -280,16 +279,12 @@ namespace POP3
                     stateToogle.Value = 0;
                     cityToogle.Value = 0;
                     RefreshComboBoxes();
-                }
-                else
-                {
-                    MessageBox.Show("Please fill all the input fields...");
+                } else {
+                    ValidationError.Show(Owner, "Please fill all the input fields.");
                 }
                 
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Please check input fields...");
+            } catch (Exception) {
+                ValidationError.Show(Owner);
                 return;
             }
         }
