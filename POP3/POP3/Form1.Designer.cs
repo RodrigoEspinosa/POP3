@@ -419,7 +419,7 @@ namespace POP3
             this.metroTabControl2.Location = new System.Drawing.Point(-4, 8);
             this.metroTabControl2.Multiline = true;
             this.metroTabControl2.Name = "metroTabControl2";
-            this.metroTabControl2.SelectedIndex = 0;
+            this.metroTabControl2.SelectedIndex = 2;
             this.metroTabControl2.Size = new System.Drawing.Size(1010, 582);
             this.metroTabControl2.TabIndex = 2;
             this.metroTabControl2.UseSelectable = true;

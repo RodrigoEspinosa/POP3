@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Drawing;
@@ -488,26 +489,38 @@ namespace POP3
             // Fill country combo boxes.
             foreach (Country country in Model<Country>.getInstances())
             {
+                locCountryComboBox.Items.Clear();
                 locCountryComboBox.Items.Add(country.Name);
             }
 
             // Fill state combo boxes.
             foreach (State state in Model<State>.getInstances())
             {
+                locStateComboBox.Items.Clear();
                 locStateComboBox.Items.Add(state.Name);
             }
 
             foreach (City city in Model<City>.getInstances())
             {
+                locCityComboBox.Items.Clear();
                 locCityComboBox.Items.Add(city.Name);
             }
 
             // Fill neighborhood combo boxes.
             foreach (Neighborhood nei in Model<Neighborhood>.getInstances())
             {
+                neighborhoodComboBox.Items.Clear();
                 neighborhoodComboBox.Items.Add(nei.Name);
+
+                clientNeighborhoodComboBox.Items.Clear();
                 clientNeighborhoodComboBox.Items.Add(nei.Name);
             }
+            foreach (Client client in Model<Client>.getInstances())
+            {
+                ownerComboBox.Items.Clear();
+                ownerComboBox.Items.Add(client);
+            }
+            
         }
 
         /// <summary>
@@ -680,7 +693,12 @@ namespace POP3
                 clientPhoneTextBox.Text != "" &&
                 Verify.Email(clientEmailTextBox))
             {
-                new Client(clientNameTextBox.Text,
+                Console.WriteLine(Directory.GetCurrentDirectory());
+                Console.WriteLine("Images");
+                Console.WriteLine(clientPictureBox.ImageLocation.ToString());
+                String path = Path.Combine(Directory.GetCurrentDirectory(), "Images", Path.GetFileName(clientPictureBox.ImageLocation));
+
+                Client client = new Client(clientNameTextBox.Text,
                                           clientEmailTextBox.Text,
                                           clientPhoneTextBox.Text,
                                           clientIdTextBox.Text,
@@ -688,16 +706,18 @@ namespace POP3
                                           clientRentHisPropertyCheck.Checked,
                                           clientRentPropertyCheck.Checked,
                                           clientBuyPropertyCheck.Checked,
-                                          clientPictureBox.Image);
+                                          path);
+                
 
                 MessageBox.Show("Client successfuly created! ");
-                //Client.Save();
+                Client.Save();
                 RefreshComboBoxes();
                 clientNameTextBox.Refresh();
                 clientIdTextBox.Refresh();
                 clientPhoneTextBox.Refresh();
                 clientEmailTextBox.Refresh();
                 clientPictureBox.Refresh();
+                clientNeighborhoodComboBox.Refresh();
                 clientBuyPropertyCheck.Checked = false;
                 clientRentPropertyCheck.Checked = false;
                 clientSellHisPropertyCheck.Checked = false;

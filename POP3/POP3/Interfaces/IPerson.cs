@@ -27,7 +27,10 @@ namespace POP3
         /// </summary>
 		String Phone { get; set; }
 
-        Image ProfilePicture { get; set; }
+        /// <summary>
+        /// Gets/Sets the picture path.
+        /// </summary>
+        String PicturePath{ get; set; }
 	}
 }
 
