@@ -12,5 +12,11 @@ namespace POP3.AuxiliaryClases
             return MetroFramework.MetroMessageBox.Show(owner, message,
                 "Validation error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        public static DialogResult Show(String message = "Please check input fields.")
+        {
+            return MetroFramework.MetroMessageBox.Show(Form.ActiveForm.Owner, message,
+                "Validation error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }
