@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace POP3.Models
 {
-    public class Apartament: Property
+    public class Apartament: Property<Apartament>
     {
         protected int apartamentNumber;
         protected int floors;

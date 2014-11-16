@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace POP3
 {
-    public abstract class Property : Model<Property>, IProperty
+    public abstract class Property<T> : Model<T>, IProperty where T:Property<T>
     {
         protected int bedrooms;
         protected int bathrooms;

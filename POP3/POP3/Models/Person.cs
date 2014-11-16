@@ -4,7 +4,7 @@ using System.Drawing;
 
 namespace POP3
 {
-    public abstract class Person<T>: Model<T>, IPerson where T:Person<T>
+    public abstract class Person<T> : Model<T>, IPerson where T:Person<T>
     {
         protected String name;
         protected String dni;
