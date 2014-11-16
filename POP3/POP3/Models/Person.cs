@@ -10,7 +10,7 @@ namespace POP3
         protected String dni;
         protected String email;
         protected String phone;
-        protected Image profilePicture;
+        protected String picturePath;
 
         /// <summary>
         /// Gets/Sets the Person Name.
@@ -48,10 +48,10 @@ namespace POP3
             set { this.phone = value; }
         }
 
-        public Image ProfilePicture
+        public String PicturePath
         {
-            get { return this.profilePicture; }
-            set { this.profilePicture = value; }
+            get { return this.picturePath; }
+            set { this.picturePath = value; }
         }
 
         /// <summary>
@@ -61,14 +61,14 @@ namespace POP3
         /// <param name="dni"></param>
         /// <param name="email"></param>
         /// <param name="phone"></param>
-        public Person(string name, string dni, string email, string phone, Image profilePicture)
+        public Person(string name, string dni, string email, string phone, String picturePath)
         {
             this.Name = name;
-            this.dni = dni;
-            this.email = email;
-            this.phone = phone;
-            this.id = Guid.NewGuid();
-            this.profilePicture = profilePicture;
+            this.DNI = dni;
+            this.Email = email;
+            this.Phone = phone;
+            this.Id = Guid.NewGuid();
+            this.PicturePath = picturePath;
         }
     }
 }

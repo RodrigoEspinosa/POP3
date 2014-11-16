@@ -28,6 +28,7 @@ namespace POP3
                         using (myStream)
                         {
                             box.Image = new Bitmap(myStream);
+                            box.ImageLocation = openFileDialog1.FileName;
                         }
                     }
                 }
@@ -37,5 +38,7 @@ namespace POP3
                 }
             }
         }
+
+        
     }
 }
