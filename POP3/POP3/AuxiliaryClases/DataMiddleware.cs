@@ -14,9 +14,10 @@ namespace POP3.AuxiliaryClases
                 State.Load();
                 City.Load();
                 Neighborhood.Load();
+                Address.Load();
                 Client.Load();
                 Apartament.Load();
-                House.Load();
+                // House.Load();
                 
             } catch (FileDoesNotExist) {
             

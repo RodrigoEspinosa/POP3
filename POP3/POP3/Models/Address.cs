@@ -28,7 +28,7 @@ namespace POP3
 		}
 
 		public Guid NeighborhoodId {
-			get { return neighborhood.Id; }
+            get { return (neighborhood != null) ? neighborhood.Id : Guid.Empty; }
 			set {
 				this.neighborhood = Model<Neighborhood>.GetBy ("Id", value);
 			}
