@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 using Newtonsoft.Json;
 
 namespace POP3
@@ -31,6 +33,21 @@ namespace POP3
 			this.name = name;
 			this.Country = country;
 		}
+
+        public static State GetOrCreate(String name, ICountry country)
+        {
+            // Filter all the states by his name.
+            foreach (State state in State.FilterBy("Name", name)) {
+                // Check if the state has the same country.
+                if (state.country.Equals(country)) {
+                    // Return the current state.
+                    return state;
+                }
+            }
+
+            // Return a new instance of state with the given arguments.
+            return new State (name, country);
+        }
 
 		public override string ToString ()
 		{

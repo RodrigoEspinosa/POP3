@@ -185,16 +185,13 @@ namespace POP3
         /// <param name="e"></param>
         private void propertyTypeComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (propertyTypeComboBox.SelectedItem.ToString() == "Apartament")
-            {
+            if (propertyTypeComboBox.SelectedItem.ToString() == "Apartament") {
                 apartamentNumber.Visible = true;
                 gardenLabel.Visible = false;
                 floorsLabel.Visible = true;
                 floorsTextBox.Visible = true;
                 gardenCheckBox.Checked = false;
-            }
-            else
-            {
+            } else {
                 apartamentNumber.Visible = false;
                 apartamentNumber.Text = "";
                 gardenLabel.Visible = true;
@@ -210,14 +207,11 @@ namespace POP3
         /// <param name="sender"></param>
         /// <param name="e"></param>
        private void modificationComboBox_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            if (modificationsComboBox.SelectedItem.ToString() == "House")
-            {
+       {
+            if (modificationsComboBox.SelectedItem.ToString() == "House") {
                 modApartamentDataGrid.Visible = false;
                 modHouseDataGrid.Visible = true;
-            }
-            else if(modificationsComboBox.SelectedItem.ToString() == "Apartament")
-            {
+            } else if(modificationsComboBox.SelectedItem.ToString() == "Apartament") {
                 modHouseDataGrid.Visible = false;
                 modApartamentDataGrid.Visible = true;
             }
@@ -263,10 +257,13 @@ namespace POP3
                 city = LocationAux.GetLocationName(locCityComboBox, locCityTextBox);
                 
                 if (!LocationAux.TextBoxIsEmpty(locNeighborhoodTextBox)) {
-                    new Neighborhood(locNeighborhoodTextBox.Text,
-                                    new City(city,
-                                    new State(state, new Country(country)
-                                    )));
+                    new Neighborhood(
+                        locNeighborhoodTextBox.Text,
+                        City.GetOrCreate(
+                            city,
+                            State.GetOrCreate(state, Country.GetOrCreate (country))
+                        )
+                    );
                     ValidationSuccess.Show("Location successfuly created!");
                     
                     Neighborhood.Save();
@@ -742,7 +739,7 @@ namespace POP3
                     // Create a new apartament.
                     CreateApartament();
                     return;
-                } else if (propertyTypeComboBox.SelectedItem.ToString() == "House" && gardenCheckBox.Checked) {
+                } else if (propertyTypeComboBox.SelectedItem.ToString() == "House") {
                     // Create a new house.
                     CreateHouse();
                     return;

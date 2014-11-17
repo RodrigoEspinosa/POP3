@@ -64,7 +64,7 @@ namespace POP3
         /// <param name="wantToRentProperty"></param>
         /// <param name="wantToSellProperty"></param>
         public Client(String name, String email, String phone, String dni, bool sellsHisProperty, bool rentsHisProperty, bool wantToRentProperty, bool wantToBuyProperty, String path)
-            :base(name,dni,email,phone, path)
+            :base(name, dni, email, phone, path)
         {
             this.SellsProperty = sellsHisProperty;
             this.RentsProperty = rentsHisProperty;
