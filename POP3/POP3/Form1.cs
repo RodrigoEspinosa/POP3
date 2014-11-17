@@ -810,6 +810,34 @@ namespace POP3
             DataGridViewRow row = this.searchGrid.Rows[e.RowIndex];
             id = row.Cells["Id"].Value.ToString();
             //aptNum = row.Cells[""]
+
+        }
+
+        private void galleryFilterGoButton_Click(object sender, EventArgs e)
+        {
+            Dictionary<String, Object> filterBy = new Dictionary<String, Object> ();
+
+            // if (galleryApartamentCheckBox.Checked) {
+            //    filterBy.Add(
+            // }
+
+            if (galleryGarageCheckBox.Checked) {
+                filterBy.Add("Garage", galleryGarageComboBox.SelectedValue);
+            }
+
+            // Get the instances that match the filter
+            IList<Apartament> apartaments = Apartament.FilterBy(filterBy);
+            
+            // Get the instances that match the filter
+            IList<House> houses = House.FilterBy(filterBy);
+
+            // Populate the search results grid
+            PopulateHouseGrid.PopulateGrid(searchGrid, apartaments, houses);
+        }
+
+        private void galleryApartamentCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

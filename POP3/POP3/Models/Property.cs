@@ -111,7 +111,7 @@ namespace POP3
             this.RentPrice = rentPrice;
             this.Address = new Address(adress1, adress2, number);
             this.Address.Neighborhood = neighborhood;
-
+            Model<Address>.Save ();
         }
     }
 }

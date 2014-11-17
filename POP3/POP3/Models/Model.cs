@@ -152,7 +152,7 @@ namespace POP3
             foreach (T instance in Model<T>.getInstances()) {
                 foreach (KeyValuePair<String, Object> filter in filterBy) {
                     // Check if the instances filtered by attribute equals to the required value.
-                    if (instance.GetType().GetProperty(filter.Key).GetValue(instance, null).Equals(filter.Value)) {
+                    if (instance.GetType().GetProperty(filter.Key).GetValue(instance).Equals(filter.Value)) {
                         // Append the instance to the result list.
                         result.Add(instance);
                     }    
