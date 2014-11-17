@@ -800,7 +800,16 @@ namespace POP3
 
         private void testButton_Click(object sender, EventArgs e)
         {
-            PopulateHouseGrid.PopulateGrid(searchGrid, Model<House>.getInstances());
+            PopulateHouseGrid.PopulateGrid(searchGrid, Model<Apartament>.getInstances(), Model<House>.getInstances());
+        }
+
+        private void searchGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            String id;
+            String aptNum;
+            DataGridViewRow row = this.searchGrid.Rows[e.RowIndex];
+            id = row.Cells["Id"].Value.ToString();
+            //aptNum = row.Cells[""]
         }
     }
 }

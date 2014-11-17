@@ -36,6 +36,21 @@ namespace POP3
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
+            this.searchPictureBox = new POP3.CustomPictureBox();
+            this.testButton = new MetroFramework.Controls.MetroButton();
+            this.searchGrid = new MetroFramework.Controls.MetroGrid();
+            this.sellPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rentPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bedrooms = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bathromm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.years = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.builtmeters = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.garage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.garden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aparteNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.floors = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.galleryFilterGoButton = new MetroFramework.Controls.MetroButton();
             this.galleryMaxPriceComboBox = new POP3.CustomComboBox();
             this.galleryMinPriceComboBox = new POP3.CustomComboBox();
@@ -145,20 +160,9 @@ namespace POP3
             this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
             this.visitComboBox = new POP3.CustomComboBox();
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
-            this.searchGrid = new MetroFramework.Controls.MetroGrid();
-            this.sellPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bedrooms = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bathromm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.years = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.builtmeters = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.garage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.garden = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aparteNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.floors = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.testButton = new MetroFramework.Controls.MetroButton();
             this.metroTabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchGrid)).BeginInit();
             this.metroTabPage2.SuspendLayout();
             this.metroTabControl2.SuspendLayout();
             this.metroTabPage6.SuspendLayout();
@@ -170,11 +174,11 @@ namespace POP3
             this.metroTabPage1.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTabPage3
             // 
+            this.metroTabPage3.Controls.Add(this.searchPictureBox);
             this.metroTabPage3.Controls.Add(this.testButton);
             this.metroTabPage3.Controls.Add(this.searchGrid);
             this.metroTabPage3.Controls.Add(this.galleryFilterGoButton);
@@ -205,9 +209,158 @@ namespace POP3
             this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage3.VerticalScrollbarSize = 10;
             // 
+            // searchPictureBox
+            // 
+            this.searchPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("searchPictureBox.InitialImage")));
+            this.searchPictureBox.Location = new System.Drawing.Point(445, 13);
+            this.searchPictureBox.Name = "searchPictureBox";
+            this.searchPictureBox.Size = new System.Drawing.Size(371, 311);
+            this.searchPictureBox.TabIndex = 22;
+            this.searchPictureBox.TabStop = false;
+            // 
+            // testButton
+            // 
+            this.testButton.Location = new System.Drawing.Point(606, 468);
+            this.testButton.Name = "testButton";
+            this.testButton.Size = new System.Drawing.Size(75, 23);
+            this.testButton.TabIndex = 20;
+            this.testButton.Text = "testButton";
+            this.testButton.UseSelectable = true;
+            this.testButton.Click += new System.EventHandler(this.testButton_Click);
+            // 
+            // searchGrid
+            // 
+            this.searchGrid.AllowUserToResizeRows = false;
+            this.searchGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.searchGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.searchGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.searchGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.searchGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.searchGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.searchGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.sellPrice,
+            this.rentPrice,
+            this.bedrooms,
+            this.bathromm,
+            this.years,
+            this.builtmeters,
+            this.adress,
+            this.garage,
+            this.garden,
+            this.aparteNumber,
+            this.floors,
+            this.id});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.searchGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            this.searchGrid.EnableHeadersVisualStyles = false;
+            this.searchGrid.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.searchGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.searchGrid.Location = new System.Drawing.Point(302, 341);
+            this.searchGrid.Name = "searchGrid";
+            this.searchGrid.ReadOnly = true;
+            this.searchGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.searchGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.searchGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.searchGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.searchGrid.Size = new System.Drawing.Size(641, 109);
+            this.searchGrid.TabIndex = 19;
+            this.searchGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.searchGrid_CellContentClick);
+            // 
+            // sellPrice
+            // 
+            this.sellPrice.HeaderText = "Sell Price";
+            this.sellPrice.Name = "sellPrice";
+            this.sellPrice.ReadOnly = true;
+            // 
+            // rentPrice
+            // 
+            this.rentPrice.HeaderText = "Rent Price";
+            this.rentPrice.Name = "rentPrice";
+            this.rentPrice.ReadOnly = true;
+            // 
+            // bedrooms
+            // 
+            this.bedrooms.HeaderText = "Bedrooms";
+            this.bedrooms.Name = "bedrooms";
+            this.bedrooms.ReadOnly = true;
+            // 
+            // bathromm
+            // 
+            this.bathromm.HeaderText = "Bathrooms";
+            this.bathromm.Name = "bathromm";
+            this.bathromm.ReadOnly = true;
+            // 
+            // years
+            // 
+            this.years.HeaderText = "Years";
+            this.years.Name = "years";
+            this.years.ReadOnly = true;
+            // 
+            // builtmeters
+            // 
+            this.builtmeters.HeaderText = "Built Meters";
+            this.builtmeters.Name = "builtmeters";
+            this.builtmeters.ReadOnly = true;
+            // 
+            // adress
+            // 
+            this.adress.HeaderText = "Adress";
+            this.adress.Name = "adress";
+            this.adress.ReadOnly = true;
+            // 
+            // garage
+            // 
+            this.garage.HeaderText = "Garage ";
+            this.garage.Name = "garage";
+            this.garage.ReadOnly = true;
+            // 
+            // garden
+            // 
+            this.garden.HeaderText = "Garden";
+            this.garden.Name = "garden";
+            this.garden.ReadOnly = true;
+            // 
+            // aparteNumber
+            // 
+            this.aparteNumber.HeaderText = "Apt N°";
+            this.aparteNumber.Name = "aparteNumber";
+            this.aparteNumber.ReadOnly = true;
+            // 
+            // floors
+            // 
+            this.floors.HeaderText = "Apt Floors";
+            this.floors.Name = "floors";
+            this.floors.ReadOnly = true;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "Id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
             // galleryFilterGoButton
             // 
-            this.galleryFilterGoButton.Location = new System.Drawing.Point(65, 373);
+            this.galleryFilterGoButton.Location = new System.Drawing.Point(77, 356);
             this.galleryFilterGoButton.Name = "galleryFilterGoButton";
             this.galleryFilterGoButton.Size = new System.Drawing.Size(75, 23);
             this.galleryFilterGoButton.TabIndex = 18;
@@ -1543,126 +1696,6 @@ namespace POP3
             this.metroLabel15.TabIndex = 2;
             this.metroLabel15.Text = "Look by";
             // 
-            // searchGrid
-            // 
-            this.searchGrid.AllowUserToResizeRows = false;
-            this.searchGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.searchGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.searchGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.searchGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.searchGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.searchGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.searchGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.sellPrice,
-            this.rentPrice,
-            this.bedrooms,
-            this.bathromm,
-            this.years,
-            this.builtmeters,
-            this.adress,
-            this.garage,
-            this.garden,
-            this.aparteNumber,
-            this.floors});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.searchGrid.DefaultCellStyle = dataGridViewCellStyle2;
-            this.searchGrid.EnableHeadersVisualStyles = false;
-            this.searchGrid.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.searchGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.searchGrid.Location = new System.Drawing.Point(306, 50);
-            this.searchGrid.Name = "searchGrid";
-            this.searchGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.searchGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.searchGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.searchGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.searchGrid.Size = new System.Drawing.Size(593, 390);
-            this.searchGrid.TabIndex = 19;
-            // 
-            // sellPrice
-            // 
-            this.sellPrice.HeaderText = "Sell Price";
-            this.sellPrice.Name = "sellPrice";
-            // 
-            // rentPrice
-            // 
-            this.rentPrice.HeaderText = "Rent Price";
-            this.rentPrice.Name = "rentPrice";
-            // 
-            // bedrooms
-            // 
-            this.bedrooms.HeaderText = "Bedrooms";
-            this.bedrooms.Name = "bedrooms";
-            // 
-            // bathromm
-            // 
-            this.bathromm.HeaderText = "Bathrooms";
-            this.bathromm.Name = "bathromm";
-            // 
-            // years
-            // 
-            this.years.HeaderText = "Years";
-            this.years.Name = "years";
-            // 
-            // builtmeters
-            // 
-            this.builtmeters.HeaderText = "Built Meters";
-            this.builtmeters.Name = "builtmeters";
-            // 
-            // adress
-            // 
-            this.adress.HeaderText = "Adress";
-            this.adress.Name = "adress";
-            // 
-            // garage
-            // 
-            this.garage.HeaderText = "Garage ";
-            this.garage.Name = "garage";
-            // 
-            // garden
-            // 
-            this.garden.HeaderText = "Garden";
-            this.garden.Name = "garden";
-            // 
-            // aparteNumber
-            // 
-            this.aparteNumber.HeaderText = "Apt N°";
-            this.aparteNumber.Name = "aparteNumber";
-            // 
-            // floors
-            // 
-            this.floors.HeaderText = "Apt Floors";
-            this.floors.Name = "floors";
-            // 
-            // testButton
-            // 
-            this.testButton.Location = new System.Drawing.Point(564, 468);
-            this.testButton.Name = "testButton";
-            this.testButton.Size = new System.Drawing.Size(75, 23);
-            this.testButton.TabIndex = 20;
-            this.testButton.Text = "testButton";
-            this.testButton.UseSelectable = true;
-            this.testButton.Click += new System.EventHandler(this.testButton_Click);
-            // 
             // MainWindow
             // 
             this.AllowDrop = true;
@@ -1676,6 +1709,8 @@ namespace POP3
             this.Text = "POP3";
             this.metroTabPage3.ResumeLayout(false);
             this.metroTabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchGrid)).EndInit();
             this.metroTabPage2.ResumeLayout(false);
             this.metroTabControl2.ResumeLayout(false);
             this.metroTabPage6.ResumeLayout(false);
@@ -1693,7 +1728,6 @@ namespace POP3
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage5.ResumeLayout(false);
             this.metroTabPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1811,6 +1845,8 @@ namespace POP3
         private CustomTextBox rentPriceTextBox;
         private CustomTextBox sellPriceTextBox;
         private MetroFramework.Controls.MetroGrid searchGrid;
+        private MetroFramework.Controls.MetroButton testButton;
+        private CustomPictureBox searchPictureBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn sellPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn rentPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn bedrooms;
@@ -1822,7 +1858,7 @@ namespace POP3
         private System.Windows.Forms.DataGridViewTextBoxColumn garden;
         private System.Windows.Forms.DataGridViewTextBoxColumn aparteNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn floors;
-        private MetroFramework.Controls.MetroButton testButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
 
 
     }
