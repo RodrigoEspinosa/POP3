@@ -211,16 +211,6 @@ namespace POP3
         /// <param name="e"></param>
        private void modificationComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (modificationsComboBox.SelectedItem.ToString() == "House")
-            {
-                modApartamentDataGrid.Visible = false;
-                modHouseDataGrid.Visible = true;
-            }
-            else if(modificationsComboBox.SelectedItem.ToString() == "Apartament")
-            {
-                modHouseDataGrid.Visible = false;
-                modApartamentDataGrid.Visible = true;
-            }
         }
 
         // The functions start here.
@@ -233,7 +223,6 @@ namespace POP3
             //Set the default picture to an initial image.
             propertyPictureBox.Image = propertyPictureBox.InitialImage;
             clientPictureBox.Image = clientPictureBox.InitialImage;
-            galleryCustomPictureBox.Image = galleryCustomPictureBox.InitialImage;
         }
 
         /// <summary>
@@ -645,7 +634,7 @@ namespace POP3
             clientIdTextBox.Refresh();
             clientPhoneTextBox.Refresh();
             clientEmailTextBox.Refresh();
-            clientPictureBox.Refresh();
+            clientPictureBox.Image = clientPictureBox.InitialImage;
             clientNeighborhoodComboBox.Refresh();
             clientBuyPropertyCheck.Checked = false;
             clientRentPropertyCheck.Checked = false;
@@ -798,6 +787,11 @@ namespace POP3
         private void rentPriceTextBox_TextChanged(object sender, EventArgs e)
         {
             Verify.Int(rentPriceTextBox);
+        }
+
+        private void testButton_Click(object sender, EventArgs e)
+        {
+            PopulateHouseGrid.PopulateGrid(searchGrid, Model<House>.getInstances());
         }
     }
 }
