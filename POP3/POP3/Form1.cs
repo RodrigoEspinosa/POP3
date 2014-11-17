@@ -95,12 +95,9 @@ namespace POP3
         private void IsGarageFilter_Check(object sender, EventArgs e)
         {
 
-            if (galleryGarageCheckBox.Checked)
-            {
+            if (galleryGarageCheckBox.Checked) {
                 galleryGarageComboBox.Visible = true;
-            }
-            else
-            {
+            } else {
                 galleryGarageComboBox.Visible = false;
             }
         }
@@ -113,12 +110,9 @@ namespace POP3
         /// <param name="e"></param>
         private void IsCountryFilter_Cheked(object sender, EventArgs e)
         {
-            if (galleryCountryCheckBox.Checked)
-            {
+            if (galleryCountryCheckBox.Checked) {
                 galleryCountryComboBox.Visible = true;
-            }
-            else
-            {
+            } else {
                 galleryCountryComboBox.Visible = false;
             }
         }
@@ -754,27 +748,41 @@ namespace POP3
                 // Console.WriteLine(Directory.GetCurrentDirectory());
                 // Console.WriteLine("Images");
                 // Console.WriteLine(clientPictureBox.ImageLocation.ToString());
-                String path = Path.Combine(Directory.GetCurrentDirectory(), "Images", Path.GetFileName(clientPictureBox.ImageLocation));
+                String origin = clientPictureBox.ImageLocation;
+                String imgPath = Path.Combine(Directory.GetCurrentDirectory(), "images", Path.GetFileName(origin));
 
-                Client client = new Client(clientNameTextBox.Text,
-                                          clientEmailTextBox.Text,
-                                          clientPhoneTextBox.Text,
-                                          clientIdTextBox.Text,
-                                          clientSellHisPropertyCheck.Checked,
-                                          clientRentHisPropertyCheck.Checked,
-                                          clientRentPropertyCheck.Checked,
-                                          clientBuyPropertyCheck.Checked,
-                                          path);
+                // Ensure the directory images exists
+                if (!Directory.Exists(Path.Combine(Directory.GetCurrentDirectory(), "images"))) {
+                    Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), "images"));
+                }
                 
+                // Copy the original image file to the local images directory.
+                System.IO.File.Copy(origin, imgPath);
 
+                // Create the new client instance.
+                new Client(
+                    clientNameTextBox.Text,
+                    clientEmailTextBox.Text,
+                    clientPhoneTextBox.Text,
+                    clientIdTextBox.Text,
+                    clientSellHisPropertyCheck.Checked,
+                    clientRentHisPropertyCheck.Checked,
+                    clientRentPropertyCheck.Checked,
+                    clientBuyPropertyCheck.Checked,
+                    imgPath
+                );
+                
+                // Display the success message.
                 ValidationSuccess.Show("Client successfuly created.");
+                
+                // Save the clients collection.
                 Client.Save();
                 
+                // Clear all the forms.
                 RefreshComboBoxes();
-
                 RefreshInputs();
-
             } else {
+                // Display the error by wrong inputs message.
                 ValidationError.Show("Client not created.\nPlease check input fields.");
             }
 
