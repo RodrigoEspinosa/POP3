@@ -40,19 +40,8 @@ namespace POP3
         /// <param name="textBox"></param>
         public static void String(CustomTextBox textBox)
         {
-            List<String> listedString = new List<String>(textBox.Text.ToString().Split());
-            List<String> numericList = new List<String>(new String[] {"0","1","2","3",
-                                                                      "4","5","6","7",
-                                                                      "8","9"});
-            if (textBox.Text != "") {
-                foreach (String i in listedString) {
-                    foreach (String n in numericList) {
-                        if (i == n) {
-                            textBox.Text = "";
-                            ValidationError.Show ("The input should be a string!");
-                        }
-                    }
-                }
+            if (textBox.Text.Trim() == "") {
+                ValidationError.Show ("This field can not be empty.");
             }
         }
 
